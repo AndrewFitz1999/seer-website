@@ -59,10 +59,10 @@ export default function DigitalTwin() {
           </p>
         </div>
 
-        <div className="mt-[6vh] overflow-x-auto">
+        <div className="mt-[6vh]">
           <svg
             viewBox="0 0 900 200"
-            className="mx-auto block h-auto w-full min-w-[640px] max-w-[820px]"
+            className="mx-auto block h-auto w-full max-w-[820px]"
           >
             <line
               x1="168" y1="100" x2="402" y2="100"
