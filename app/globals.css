@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-purple: #661fe4;
+  --color-purple-soft: #8a52f0;
+  --color-ink: #17111f;
+  --color-paper: #ffffff;
+  --color-paper-2: #f5f2fb;
+  --color-grey: #5b5470;
+  --color-grey-dim: #8983a0;
+  --color-signal: #43d9c8;
+  --color-signal-deep: #0e8c7f;
+
+  --font-display: var(--font-montserrat);
+  --font-body: var(--font-inter);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes ringsIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.anim-rings {
+  opacity: 0;
+  animation: ringsIn 2.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+.anim-fade-up {
+  opacity: 0;
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+.caret {
+  display: inline-block;
+  width: 3px;
+  height: 0.85em;
+  background: var(--color-purple-soft);
+  margin-left: 4px;
+  transform: translateY(0.1em);
+  animation: blink 0.9s step-end infinite;
+}
+
+/* generic scroll-reveal, toggled by IntersectionObserver in RevealSection */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.reveal-in {
+  opacity: 1;
+  transform: translateY(0);
+}

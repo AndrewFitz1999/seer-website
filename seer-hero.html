@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEER Health</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --purple: #661FE4;
+    --purple-soft: #8A52F0;
+    --ink: #0B0714;
+    --ink-2: #150C24;
+    --paper: #F7F5FB;
+    --grey: #A79FC2;
+    --grey-dim: #6E6482;
+    --signal: #43D9C8;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html,body{
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Inter', sans-serif;
+    overflow-x:hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero{
+    position: relative;
+    min-height: 100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding: 8vh 8vw 6vh;
+    overflow:hidden;
+  }
+
+  .rings{
+    position:absolute;
+    top:50%; left:50%;
+    width:min(1100px, 160vw);
+    height:min(1100px, 160vw);
+    transform: translate(-50%,-50%);
+    pointer-events:none;
+    opacity:0;
+    animation: ringsIn 2.4s cubic-bezier(.16,1,.3,1) 0.15s forwards;
+  }
+  @keyframes ringsIn{
+    from{ opacity:0; transform: translate(-50%,-50%) scale(0.85); }
+    to{ opacity:1; transform: translate(-50%,-50%) scale(1); }
+  }
+  .rings svg{ width:100%; height:100%; display:block; }
+  .rings circle{
+    fill:none;
+    stroke: url(#ringGrad);
+    stroke-width: 1;
+    opacity: 0.5;
+  }
+
+  .wordmark{
+    position:relative;
+    z-index:2;
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    opacity:0;
+    animation: fadeUp 0.8s ease-out 0.2s forwards;
+  }
+  .mark{ width:30px; height:30px; flex-shrink:0; }
+  .wordmark span{
+    font-family:'Montserrat', sans-serif;
+    font-weight:600;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+    color: var(--paper);
+  }
+
+  @keyframes fadeUp{
+    from{ opacity:0; transform: translateY(10px); }
+    to{ opacity:1; transform: translateY(0); }
+  }
+
+  .hero-main{
+    position:relative;
+    z-index:2;
+    margin-top: 14vh;
+    max-width: 880px;
+  }
+
+  .eyebrow{
+    font-family:'Inter', sans-serif;
+    font-size: 0.95rem;
+    color: var(--grey);
+    margin-bottom: 1.4rem;
+    opacity:0;
+    animation: fadeUp 0.8s ease-out 0.4s forwards;
+  }
+
+  .headline{
+    font-family:'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: clamp(2.1rem, 5.4vw, 4rem);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    color: var(--paper);
+    min-height: 3.6em;
+  }
+
+  .typewrite{ display:inline; }
+  .caret{
+    display:inline-block;
+    width: 3px;
+    height: 0.85em;
+    background: var(--purple-soft);
+    margin-left: 4px;
+    transform: translateY(0.1em);
+    animation: blink 0.9s step-end infinite;
+  }
+  @keyframes blink{ 50%{ opacity:0; } }
+
+  .sub{
+    margin-top: 1.8rem;
+    max-width: 46ch;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: var(--grey);
+    opacity: 0;
+  }
+  .sub.in{ animation: fadeUp 0.8s ease-out forwards; }
+
+  .cta-row{
+    margin-top: 2.6rem;
+    display:flex;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    opacity:0;
+  }
+  .cta-row.in{ animation: fadeUp 0.8s ease-out forwards; }
+
+  .btn{
+    font-family:'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.85rem 1.6rem;
+    border-radius: 3px;
+    text-decoration:none;
+    display:inline-block;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-primary{
+    background: var(--purple);
+    color: var(--paper);
+    border: 1px solid var(--purple);
+  }
+  .btn-primary:hover{ background: var(--purple-soft); border-color: var(--purple-soft); }
+  .btn-ghost{
+    background: transparent;
+    color: var(--paper);
+    border: 1px solid rgba(247,245,251,0.25);
+  }
+  .btn-ghost:hover{ border-color: rgba(247,245,251,0.6); }
+
+  /* ---------- TRUST BAR ---------- */
+
+  .trust{
+    border-top: 1px solid rgba(247,245,251,0.1);
+    padding: 3.2rem 8vw;
+    opacity:0;
+  }
+  .trust.in{ animation: fadeUp 0.9s ease-out forwards; }
+
+  .trust-label{
+    font-family:'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--grey-dim);
+    margin-bottom: 1.6rem;
+  }
+
+  .trust-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  @media (max-width: 880px){
+    .trust-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .trust-item{
+    font-family:'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--paper);
+    line-height: 1.4;
+    padding-top: 1.1rem;
+    border-top: 1px solid rgba(247,245,251,0.15);
+  }
+  .trust-item small{
+    display:block;
+    font-family:'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--grey-dim);
+    margin-top: 0.4rem;
+  }
+
+  footer.note{
+    text-align:center;
+    padding: 2rem 8vw 3rem;
+    font-family:'Inter', sans-serif;
+    font-size: 0.78rem;
+    color: var(--grey-dim);
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="rings">
+    <svg viewBox="0 0 400 400">
+      <defs>
+        <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#8A52F0"/>
+          <stop offset="100%" stop-color="#43D9C8"/>
+        </linearGradient>
+      </defs>
+      <circle cx="200" cy="200" r="80"/>
+      <circle cx="200" cy="200" r="130"/>
+      <circle cx="200" cy="200" r="180"/>
+    </svg>
+  </div>
+
+  <div class="wordmark">
+    <svg class="mark" viewBox="0 0 100 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M100 60.5C100 27.1 73.1 0 40 0V17C63.7 17 83 36.5 83 60.5H100Z" fill="#661FE4"/>
+      <path d="M40 33C57.7 33 72 47.5 72 65.3C72 83.1 57.7 97.6 40 97.6V80.6C48.3 80.6 55 73.7 55 65.3C55 56.9 48.3 50 40 50V33Z" fill="#661FE4"/>
+      <path d="M0 65.3C0 90.5 20.4 111 45.5 111V121C15 121 -10 96.2 -10 65.3H0Z" fill="#661FE4" transform="translate(10,0)"/>
+    </svg>
+    <span>SEER Health</span>
+  </div>
+
+  <div class="hero-main">
+    <p class="eyebrow">A patented Metabolic Digital Twin platform</p>
+    <h1 class="headline">
+      <span class="typewrite" id="typewrite"></span><span class="caret"></span>
+    </h1>
+    <p class="sub" id="sub">Real-world glucose, insulin and activity data, turned into predictive insight, so people and the systems that support them can make better metabolic decisions.</p>
+    <div class="cta-row" id="cta">
+      <a class="btn btn-primary" href="#twin">See how it works</a>
+      <a class="btn btn-ghost" href="#contact">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<section class="trust" id="trust">
+  <p class="trust-label">Where the platform stands today</p>
+  <div class="trust-grid">
+    <div class="trust-item">Core patent granted<small>2026</small></div>
+    <div class="trust-item">Clinical validation in T1D and T2D<small>Peer-reviewed, Diabetes Technology &amp; Therapeutics</small></div>
+    <div class="trust-item">Collaboration with Medtronic Diabetes Care<small>Forecast validation study</small></div>
+    <div class="trust-item">Up to 24h forecast accuracy<small>From 5 days of training data</small></div>
+  </div>
+</section>
+
+<footer class="note">Prototype hero &amp; trust bar &mdash; typewriter intro, no video assets. Built for review.</footer>
+
+<script>
+  const phrases = ["The future of metabolic", "health starts here."];
+  const el = document.getElementById('typewrite');
+  const sub = document.getElementById('sub');
+  const cta = document.getElementById('cta');
+  const trust = document.getElementById('trust');
+
+  let full = phrases.join(' ');
+  let i = 0;
+
+  function type(){
+    if(i <= full.length){
+      // insert a line break at the phrase boundary for nicer wrapping
+      let text = full.slice(0, i);
+      el.textContent = text;
+      i++;
+      const char = full[i-1];
+      const delay = (char === '.' ) ? 220 : 34 + Math.random()*28;
+      setTimeout(type, delay);
+    } else {
+      setTimeout(() => {
+        sub.classList.add('in');
+        cta.classList.add('in');
+        setTimeout(() => trust.classList.add('in'), 500);
+      }, 250);
+    }
+  }
+
+  window.addEventListener('load', () => setTimeout(type, 900));
+</script>
+
+</body>
+</html>
