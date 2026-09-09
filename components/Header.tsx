@@ -2,36 +2,15 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import Mark from "./Mark";
 import { capabilityColumns } from "@/lib/capabilities";
 
 export default function Header() {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
-
-  const [scrolledPast, setScrolledPast] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [capabilitiesOpen, setCapabilitiesOpen] = useState(false);
   const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const triggerRef = useRef<HTMLDivElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
-
-  const visible = isHome ? scrolledPast : true;
-
-  useEffect(() => {
-    if (!isHome) return;
-    function onScroll() {
-      const isVisible = window.scrollY > 480;
-      setScrolledPast(isVisible);
-      if (!isVisible) {
-        setMenuOpen(false);
-        setCapabilitiesOpen(false);
-      }
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isHome]);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -66,13 +45,8 @@ export default function Header() {
   }
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-all duration-300 ease-out ${
-        visible
-          ? "translate-y-0 opacity-100 border-ink/10 bg-paper/85 backdrop-blur"
-          : "-translate-y-full opacity-0 border-transparent"
-      }`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-ink/10 bg-paper/85 backdrop-blur">
+
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-[8vw] py-4">
         <Link href="/" className="flex items-center gap-3">
           <Mark className="h-6 w-auto shrink-0" />

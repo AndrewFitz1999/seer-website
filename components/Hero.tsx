@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import Mark from "./Mark";
 
 const PHRASES = ["Build metabolic health products", "without building the science underneath them."];
 const FULL = PHRASES.join(" ");
@@ -44,7 +43,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-[8vw] pt-[8vh] pb-[6vh]">
+      <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden px-[8vw] pt-[18vh] pb-[6vh]">
         <div className="anim-rings pointer-events-none absolute top-1/2 left-1/2 h-[min(1100px,160vw)] w-[min(1100px,160vw)] -translate-x-1/2 -translate-y-1/2">
           <svg viewBox="0 0 400 400" className="block h-full w-full">
             <defs>
@@ -59,14 +58,7 @@ export default function Hero() {
           </svg>
         </div>
 
-        <div className="anim-fade-up relative z-[2] flex items-center gap-3.5 [animation-delay:0.2s]">
-          <Mark />
-          <span className="font-display text-[1.05rem] font-semibold tracking-[0.01em] text-ink">
-            SEER Health
-          </span>
-        </div>
-
-        <div className="relative z-[2] mt-[14vh] max-w-[880px]">
+        <div className="relative z-[2] max-w-[880px]">
           <p className="anim-fade-up mb-[1.4rem] text-[0.95rem] text-grey [animation-delay:0.4s]">
             The future of metabolic health starts here.
           </p>
