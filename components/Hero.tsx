@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import Mark from "./Mark";
 
-const PHRASES = ["The future of metabolic", "health starts here."];
+const PHRASES = ["Build metabolic health products", "without building the science underneath them."];
 const FULL = PHRASES.join(" ");
 
 export default function Hero() {
@@ -67,7 +68,7 @@ export default function Hero() {
 
         <div className="relative z-[2] mt-[14vh] max-w-[880px]">
           <p className="anim-fade-up mb-[1.4rem] text-[0.95rem] text-grey [animation-delay:0.4s]">
-            A patented Metabolic Digital Twin platform
+            The future of metabolic health starts here.
           </p>
 
           <h1 className="min-h-[3.6em] font-display text-[clamp(2.1rem,5.4vw,4rem)] leading-[1.18] font-medium tracking-[-0.01em] text-ink">
@@ -95,12 +96,12 @@ export default function Hero() {
             >
               See how it works
             </a>
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="rounded-[3px] border border-ink/25 px-[1.6rem] py-[0.85rem] text-[0.95rem] font-medium text-ink transition-colors hover:border-ink/60"
             >
               Talk to us
-            </a>
+            </Link>
           </div>
         </div>
       </section>
