@@ -188,39 +188,41 @@ export default function Header() {
           menuOpen ? "grid-rows-[1fr] border-ink/10" : "grid-rows-[0fr] border-transparent"
         }`}
       >
-        <div className="flex min-h-0 flex-col gap-1 px-[8vw] py-4">
-          <p className="mt-2 mb-1 text-[0.72rem] font-medium uppercase tracking-[0.1em] text-grey-dim">
-            Capabilities
-          </p>
-          {capabilityColumns.map((column) =>
-            column.items.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMenuOpen(false)}
-                className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-ink"
-              >
-                {item.title}
-              </Link>
-            ))
-          )}
+        <div className="min-h-0 overflow-hidden">
+          <div className="flex flex-col gap-1 px-[8vw] py-4">
+            <p className="mt-2 mb-1 text-[0.72rem] font-medium uppercase tracking-[0.1em] text-grey-dim">
+              Capabilities
+            </p>
+            {capabilityColumns.map((column) =>
+              column.items.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-ink"
+                >
+                  {item.title}
+                </Link>
+              ))
+            )}
 
-          <div className="my-2 h-px bg-ink/10" />
+            <div className="my-2 h-px bg-ink/10" />
 
-          <Link
-            href="/developers"
-            onClick={() => setMenuOpen(false)}
-            className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-ink"
-          >
-            Developers
-          </Link>
-          <Link
-            href="/contact"
-            onClick={() => setMenuOpen(false)}
-            className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-ink"
-          >
-            Contact
-          </Link>
+            <Link
+              href="/developers"
+              onClick={() => setMenuOpen(false)}
+              className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-ink"
+            >
+              Developers
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-ink"
+            >
+              Contact
+            </Link>
+          </div>
         </div>
       </nav>
     </header>
