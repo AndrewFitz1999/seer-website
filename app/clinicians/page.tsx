@@ -5,7 +5,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Clinician Solution — SEER Health",
   description:
-    "See your patients' metabolic picture: glucose trends, forecasts and context, inside your existing clinical workflow.",
+    "Combat and improve metabolic healthcare at the most important point of care: for the clinicians, clinics and hospitals on the frontline.",
 };
 
 export default function CliniciansPage() {
@@ -14,7 +14,7 @@ export default function CliniciansPage() {
       <PageHero
         eyebrow="For clinicians"
         headline="Clinician Solution"
-        body="See your patients' metabolic picture: glucose trends, forecasts and context, inside your existing clinical workflow."
+        body="Our goal is to combat and improve metabolic healthcare at the most important point of care: for the clinicians, clinics and hospitals on the frontline. If you'd like to explore opportunities and understand the impact our MDT platform can have on improving outcomes for each individual in your care, reach out and contact us to learn more."
       >
         <Link
           href="/contact"
@@ -23,13 +23,6 @@ export default function CliniciansPage() {
           Talk to us
         </Link>
       </PageHero>
-
-      <section className="px-[8vw] py-[8vh]">
-        <p className="max-w-[54ch] text-[0.95rem] leading-[1.7] text-grey">
-          We&rsquo;re early in shaping the clinician experience. If you&rsquo;d like to help define
-          what belongs in it, get in touch.
-        </p>
-      </section>
     </main>
   );
 }

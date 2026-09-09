@@ -24,8 +24,8 @@ export const capabilityColumns: CapabilityColumn[] = [
     eyebrow: "For consumers",
     items: [
       {
-        title: "SEER App",
-        description: "Your personal Metabolic Digital Twin. See how food, sleep and activity move your glucose.",
+        title: "MyAlly",
+        description: "Your glucose, activity, wearables, labs, food and medications, in one connected picture.",
         href: "/app",
       },
     ],

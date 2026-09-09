@@ -3,9 +3,9 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "SEER App — SEER Health",
+  title: "MyAlly — SEER Health",
   description:
-    "Your personal Metabolic Digital Twin, on your phone. See how food, sleep and activity move your glucose, before they happen.",
+    "MyAlly brings your glucose, activity, wearables, labs, food and medications into one connected picture, so you can see how they relate and what to do next.",
 };
 
 const screens = [
@@ -14,13 +14,13 @@ const screens = [
   "Contribute your data",
 ];
 
-export default function SeerAppPage() {
+export default function MyAllyPage() {
   return (
     <main>
       <PageHero
         eyebrow="For consumers"
-        headline="SEER App"
-        body="Your personal Metabolic Digital Twin, on your phone. See how food, sleep and activity move your glucose, before they happen."
+        headline="MyAlly"
+        body="Your personal Metabolic Digital Twin, on your phone. MyAlly brings your glucose, activity, wearables, labs, food and medications into one connected picture, so you can see how they relate and what to do next."
       />
 
       <section className="border-b border-ink/10 bg-paper-2 px-[8vw] py-[8vh]">
@@ -50,11 +50,11 @@ export default function SeerAppPage() {
 
           <div>
             <p className="max-w-[54ch] text-[0.95rem] leading-[1.7] text-grey">
-              With your consent, real-world glucose, insulin and activity data from the SEER App
-              helps extend the same validation work already underway in Type 1 and Type 2
-              diabetes, alongside our collaboration with Medtronic Diabetes Care. If you are
-              living with diabetes or another metabolic condition, you can opt in to contribute
-              your data to ongoing studies and help improve the model for everyone who uses it.
+              With your consent, real-world data from MyAlly helps extend the same validation
+              work already underway in Type 1 and Type 2 diabetes, alongside our collaboration
+              with Medtronic Diabetes Care. If you are living with diabetes or another metabolic
+              condition, you can opt in to contribute your data to ongoing studies and help
+              improve the model for everyone who uses it.
             </p>
             <Link
               href="/contact"

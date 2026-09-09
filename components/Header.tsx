@@ -65,9 +65,9 @@ export default function Header() {
               type="button"
               onClick={openCapabilities}
               aria-expanded={capabilitiesOpen}
-              className="flex items-center gap-1.5 font-body text-[0.9rem] text-grey transition-colors hover:text-ink"
+              className="flex items-center gap-1.5 font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft"
             >
-              Capabilities
+              Our Offerings
               <svg
                 width="10"
                 height="6"
@@ -80,10 +80,10 @@ export default function Header() {
             </button>
           </div>
 
-          <Link href="/developers" className="font-body text-[0.9rem] text-grey transition-colors hover:text-ink">
+          <Link href="/developers" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
             Developers
           </Link>
-          <Link href="/contact" className="font-body text-[0.9rem] text-grey transition-colors hover:text-ink">
+          <Link href="/contact" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
             Contact
           </Link>
         </nav>
@@ -140,9 +140,9 @@ export default function Header() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setCapabilitiesOpen(false)}
-                      className="block"
+                      className="group block"
                     >
-                      <div className="font-display text-[0.95rem] font-medium text-ink">
+                      <div className="font-display text-[0.95rem] font-medium text-ink transition-colors group-hover:text-purple-soft">
                         {item.title}
                       </div>
                       <div className="mt-1 max-w-[32ch] text-[0.82rem] leading-[1.5] text-grey">
@@ -165,7 +165,7 @@ export default function Header() {
         <div className="min-h-0 overflow-hidden">
           <div className="flex flex-col gap-1 px-[8vw] py-4">
             <p className="mt-2 mb-1 text-[0.72rem] font-medium uppercase tracking-[0.1em] text-grey-dim">
-              Capabilities
+              Our Offerings
             </p>
             {capabilityColumns.map((column) =>
               column.items.map((item) => (
@@ -173,7 +173,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMenuOpen(false)}
-                  className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-ink"
+                  className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-purple-soft"
                 >
                   {item.title}
                 </Link>
@@ -185,14 +185,14 @@ export default function Header() {
             <Link
               href="/developers"
               onClick={() => setMenuOpen(false)}
-              className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-ink"
+              className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-purple-soft"
             >
               Developers
             </Link>
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-ink"
+              className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-purple-soft"
             >
               Contact
             </Link>

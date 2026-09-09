@@ -53,9 +53,9 @@ export default function DigitalTwin() {
         <div className={`reveal ${visible ? "reveal-in" : ""} max-w-[62ch]`}>
           <p className="mb-5 text-[0.95rem] text-grey">What a Metabolic Digital Twin is</p>
           <p className="font-display text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.4] font-medium text-ink">
-            Our Metabolic Digital Twin (MDT+) is a scalable, AI-enabled model that turns
-            real-world data into predictive insights, unlocking better decisions, safety,
-            efficiency and new opportunities.
+            Our MDT platform transforms real world data into personalized and predictive
+            insights, creating a variety of personalized applications that unlock better
+            decisions, safety and efficiency.
           </p>
         </div>
 

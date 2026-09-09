@@ -1,17 +1,19 @@
 import Hero from "@/components/Hero";
-import Problem from "@/components/Problem";
+import Challenge from "@/components/Challenge";
 import DigitalTwin from "@/components/DigitalTwin";
 import Mission from "@/components/Mission";
 import Team from "@/components/Team";
+import Collaborators from "@/components/Collaborators";
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      <Problem />
+      <Challenge />
       <DigitalTwin />
       <Mission />
       <Team />
+      <Collaborators />
     </main>
   );
 }

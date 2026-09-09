@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
-import WaitlistForm from "@/components/WaitlistForm";
+import DeveloperAccess from "@/components/DeveloperAccess";
 
 export const metadata: Metadata = {
   title: "Get API access — SEER Health",
@@ -18,19 +18,7 @@ export default function DevelopersPage() {
       />
 
       <section className="px-[8vw] py-[8vh]">
-        <div className="mx-auto grid max-w-[1200px] gap-14 lg:grid-cols-[1fr_1fr]">
-          <div>
-            <p className="max-w-[26ch] font-display text-[clamp(1.3rem,2.4vw,1.8rem)] leading-[1.35] font-medium text-ink">
-              The MDT platform is not yet available in your region.
-            </p>
-            <p className="mt-6 max-w-[46ch] text-[0.95rem] leading-[1.7] text-grey">
-              Join the waitlist and we&rsquo;ll reach out as soon as access opens up. Telling us
-              where you&rsquo;re building helps us prioritise rollout.
-            </p>
-          </div>
-
-          <WaitlistForm />
-        </div>
+        <DeveloperAccess />
       </section>
     </main>
   );
