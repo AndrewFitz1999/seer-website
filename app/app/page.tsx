@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import PhoneMockup from "@/components/PhoneMockup";
+import PhoneMockup, { type PhoneCrop } from "@/components/PhoneMockup";
 
 export const metadata: Metadata = {
   title: "MyAlly — SEER Health",
@@ -9,10 +9,17 @@ export const metadata: Metadata = {
     "MyAlly brings your glucose, activity, wearables, labs, food and medications into one connected picture, so you can see how they relate and what to do next.",
 };
 
-// The cycle-home design canvas draws its phone shape inset within a wider
-// artboard rather than filling it edge-to-edge — crop to just the phone rect
-// (measured from the source) so it fills the card cleanly.
-const CYCLE_HOME_CROP = { x: 20, y: 40, width: 350, height: 758 };
+// Every screen shares the same design-canvas template, which draws its phone
+// shape inset within a wider artboard rather than filling it edge-to-edge —
+// crop to just the phone rect (measured from the source) so each fills its
+// card cleanly.
+const SCREEN_CROP: PhoneCrop = { x: 20, y: 40, width: 350, height: 758 };
+
+const screens = [
+  { src: "/mockups/seer-cycle-insights.html", label: "Cycle Insights" },
+  { src: "/mockups/seer-cycle-home.html", label: "Cycle-aware home screen" },
+  { src: "/mockups/seer-todays-guidance.html", label: "Today's guidance" },
+];
 
 export default function MyAllyPage() {
   return (
@@ -25,17 +32,18 @@ export default function MyAllyPage() {
       <section className="overflow-hidden bg-paper-2 px-[8vw] py-[12vh]">
         {/* Mobile: stacked, full-size phones — the fan below gets too narrow to render legibly */}
         <div className="mx-auto flex max-w-[260px] flex-col items-center gap-10 md:hidden">
-          <PhoneMockup
-            src="/mockups/seer-cycle-home.html"
-            label="Cycle-aware home screen"
-            crop={CYCLE_HOME_CROP}
-            className="w-full"
-          />
-          <PhoneMockup label="Glucose forecast" className="w-full" />
-          <PhoneMockup label="Today view" className="w-full" />
+          {screens.map((screen) => (
+            <PhoneMockup
+              key={screen.src}
+              src={screen.src}
+              label={screen.label}
+              crop={SCREEN_CROP}
+              className="w-full"
+            />
+          ))}
         </div>
 
-        {/* Tablet+: staggered fan, real screen featured front and center */}
+        {/* Tablet+: staggered fan, home screen featured front and center */}
         <div className="relative mx-auto hidden max-w-[640px] md:block">
           <div
             className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-30 blur-[80px]"
@@ -43,23 +51,16 @@ export default function MyAllyPage() {
           />
           <div className="relative flex items-end justify-center">
             <div className="relative z-0 w-[34%] -mr-8 translate-y-6 rotate-[-8deg] opacity-90">
-              <PhoneMockup label="Glucose forecast" />
+              <PhoneMockup src={screens[0].src} label={screens[0].label} crop={SCREEN_CROP} />
             </div>
             <div className="relative z-10 w-[42%]">
-              <PhoneMockup
-                src="/mockups/seer-cycle-home.html"
-                label="Cycle-aware home screen"
-                crop={CYCLE_HOME_CROP}
-              />
+              <PhoneMockup src={screens[1].src} label={screens[1].label} crop={SCREEN_CROP} />
             </div>
             <div className="relative z-0 w-[34%] -ml-8 translate-y-6 rotate-[8deg] opacity-90">
-              <PhoneMockup label="Today view" />
+              <PhoneMockup src={screens[2].src} label={screens[2].label} crop={SCREEN_CROP} />
             </div>
           </div>
         </div>
-        <p className="mt-14 text-center text-[0.8rem] text-grey-dim">
-          Additional screens to be supplied. Placeholders shown for layout only.
-        </p>
       </section>
 
       <section id="contribute" className="px-[8vw] py-[10vh]">
