@@ -4,12 +4,12 @@ const cards = [
   {
     label: "Our mission",
     color: "#661FE4",
-    body: "We're building the intelligence layer for metabolic health: a personalised digital twin that brings medical-device, wearable and health data together into AI-native care, grounded in each person's own biology.",
+    body: "At SEER Health, we are building the intelligence layer for metabolic health: a personalised digital twin that unifies medical-device, wearable and health data to AI native solutions grounded in each person’s unique biology.",
   },
   {
     label: "Our vision",
     color: "#0E8C7F",
-    body: "A future where care is safe, continuous and a step ahead — at home, in the clinic, and through the devices people already use. Turning reactive, one-size-fits-all medicine into personalised care with foresight, for billions of people.",
+    body: "Our vision is to enable safe, continuous and predictive care across metabolic health, at home, in the clinic and through the devices people use, transforming reactive, one-size-fits-all medicine into personalised care with foresight for billions of people.",
   },
 ];
 
