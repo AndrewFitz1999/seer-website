@@ -29,7 +29,7 @@ export default function MyAllyPage() {
         body="Your personal Metabolic Digital Twin, on your phone. MyAlly brings your glucose, activity, wearables, labs, food and medications into one connected picture, so you can see how they relate and what to do next."
       />
 
-      <section className="overflow-hidden bg-paper-2 px-[8vw] py-[12vh]">
+      <section className="overflow-hidden bg-paper px-[8vw] py-[12vh]">
         {/* Mobile: stacked, full-size phones — the fan below gets too narrow to render legibly */}
         <div className="mx-auto flex max-w-[260px] flex-col items-center gap-10 md:hidden">
           {screens.map((screen) => (

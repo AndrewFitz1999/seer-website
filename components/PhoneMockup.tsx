@@ -28,7 +28,7 @@ export default function PhoneMockup({
 
   return (
     <div
-      className={`relative aspect-[9/19.5] w-full overflow-hidden rounded-[2.2rem] bg-paper shadow-[0_30px_70px_-20px_rgba(102,31,228,0.35)] ${className}`}
+      className={`relative aspect-[9/19.5] w-full overflow-hidden rounded-[2.2rem] bg-paper shadow-[0_25px_60px_-15px_rgba(11,7,20,0.35)] ${className}`}
     >
       {src ? (
         <div className="absolute inset-0" style={{ containerType: "inline-size" }}>
