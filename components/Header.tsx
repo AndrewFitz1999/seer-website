@@ -96,7 +96,7 @@ export default function Header() {
             href="/contact"
             className="rounded-full border border-purple bg-purple px-5 py-2 font-body text-[0.85rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
           >
-            Talk to us
+            Contact us
           </Link>
 
           <button

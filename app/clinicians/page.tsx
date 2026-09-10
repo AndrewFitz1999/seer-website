@@ -19,7 +19,7 @@ export default function CliniciansPage() {
           href="/contact"
           className="mt-8 inline-block rounded-full border border-purple bg-purple px-[1.7rem] py-[0.85rem] text-[0.95rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
         >
-          Talk to us
+          Contact us
         </Link>
       </PageHero>
     </main>

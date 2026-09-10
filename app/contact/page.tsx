@@ -11,7 +11,7 @@ export default function ContactPage() {
   return (
     <main>
       <PageHero
-        headline="Talk to us"
+        headline="Contact us"
         body="Whether you're exploring SEER Health as a partner, a platform, or an investment, we'd like to hear from you."
       />
 

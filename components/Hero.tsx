@@ -3,12 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const PHRASES = ["Build metabolic health products", "without building the science underneath them."];
+const PHRASES = ["Delivering AI native individualised care", "through our metabolic digital twin platform."];
 const FULL = PHRASES.join(" ");
 
 export default function Hero() {
   const [typed, setTyped] = useState("");
-  const [subIn, setSubIn] = useState(false);
   const [ctaIn, setCtaIn] = useState(false);
 
   useEffect(() => {
@@ -28,10 +27,7 @@ export default function Hero() {
         const delay = char === "." ? 220 : 34 + Math.random() * 28;
         schedule(type, delay);
       } else {
-        schedule(() => {
-          setSubIn(true);
-          setCtaIn(true);
-        }, 250);
+        schedule(() => setCtaIn(true), 250);
       }
     }
 
@@ -60,18 +56,10 @@ export default function Hero() {
           The future of metabolic healthcare starts here.
         </p>
 
-        <h1 className="min-h-[3.6em] font-display text-[clamp(2.1rem,5.4vw,4rem)] leading-[1.18] font-medium tracking-[-0.01em] text-ink">
+        <h1 className="min-h-[4.4em] font-display text-[clamp(2.1rem,5.4vw,4rem)] leading-[1.18] font-medium tracking-[-0.01em] text-ink">
           <span>{typed}</span>
           <span className="caret" />
         </h1>
-
-        <p
-          className={`mt-[1.8rem] max-w-[46ch] text-[1.05rem] leading-[1.6] text-grey ${
-            subIn ? "anim-fade-up" : "opacity-0"
-          }`}
-        >
-          Delivering AI native individualised care through our metabolic digital twin platform.
-        </p>
 
         <div
           className={`mt-[2.6rem] flex flex-wrap gap-[1.2rem] ${
@@ -88,7 +76,7 @@ export default function Hero() {
             href="/contact"
             className="rounded-full border border-ink/25 px-[1.7rem] py-[0.85rem] text-[0.95rem] font-medium text-ink transition-colors hover:border-ink/60"
           >
-            Talk to us
+            Contact us
           </Link>
         </div>
       </div>
