@@ -47,19 +47,21 @@ export default function DigitalTwin() {
     <section
       ref={ref}
       id="twin"
-      className="border-t border-ink/10 px-[8vw] py-[8vh]"
+      className="px-[8vw] py-[12vh]"
     >
       <div className="mx-auto max-w-[1200px]">
         <div className={`reveal ${visible ? "reveal-in" : ""} max-w-[62ch]`}>
-          <p className="mb-5 text-[0.95rem] text-grey">What a Metabolic Digital Twin is</p>
-          <p className="font-display text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.4] font-medium text-ink">
+          <h2 className="font-display text-[clamp(1.8rem,3.2vw,2.6rem)] font-medium leading-[1.2] tracking-[-0.01em] text-ink">
+            What a Metabolic Digital Twin is
+          </h2>
+          <p className="mt-5 text-[1.05rem] leading-[1.7] text-grey">
             Our MDT platform transforms real world data into personalized and predictive
             insights, creating a variety of personalized applications that unlock better
             decisions, safety and efficiency.
           </p>
         </div>
 
-        <div className="mt-[6vh]">
+        <div className="mt-[8vh]">
           <svg
             viewBox="0 0 900 200"
             className="mx-auto block h-auto w-full max-w-[820px]"

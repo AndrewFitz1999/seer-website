@@ -18,12 +18,11 @@ export default function MyAllyPage() {
   return (
     <main>
       <PageHero
-        eyebrow="For consumers"
         headline="MyAlly"
         body="Your personal Metabolic Digital Twin, on your phone. MyAlly brings your glucose, activity, wearables, labs, food and medications into one connected picture, so you can see how they relate and what to do next."
       />
 
-      <section className="border-b border-ink/10 bg-paper-2 px-[8vw] py-[8vh]">
+      <section className="bg-paper-2 px-[8vw] py-[10vh]">
         <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-8 sm:grid-cols-3">
           {screens.map((label) => (
             <div key={label} className="mx-auto w-full max-w-[220px]">
@@ -39,10 +38,9 @@ export default function MyAllyPage() {
         </p>
       </section>
 
-      <section id="contribute" className="border-b border-ink/10 px-[8vw] py-[8vh]">
+      <section id="contribute" className="px-[8vw] py-[10vh]">
         <div className="mx-auto grid max-w-[1200px] gap-10 lg:grid-cols-[1fr_1fr] lg:items-end">
           <div>
-            <p className="mb-5 text-[0.95rem] text-grey">Help train the Twin</p>
             <p className="max-w-[22ch] font-display text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.35] font-medium text-ink">
               Your data can help make it more accurate for the next person.
             </p>
@@ -58,7 +56,7 @@ export default function MyAllyPage() {
             </p>
             <Link
               href="/contact"
-              className="mt-6 inline-block rounded-[3px] border border-ink/25 px-[1.6rem] py-[0.85rem] text-[0.95rem] font-medium text-ink transition-colors hover:border-ink/60"
+              className="mt-6 inline-block rounded-full border border-ink/25 px-[1.7rem] py-[0.85rem] text-[0.95rem] font-medium text-ink transition-colors hover:border-ink/60"
             >
               Ask about current studies
             </Link>

@@ -12,13 +12,12 @@ export default function CliniciansPage() {
   return (
     <main>
       <PageHero
-        eyebrow="For clinicians"
         headline="Clinician Solution"
         body="Our goal is to combat and improve metabolic healthcare at the most important point of care: for the clinicians, clinics and hospitals on the frontline. If you'd like to explore opportunities and understand the impact our MDT platform can have on improving outcomes for each individual in your care, reach out and contact us to learn more."
       >
         <Link
           href="/contact"
-          className="mt-8 inline-block rounded-[3px] border border-purple bg-purple px-[1.6rem] py-[0.85rem] text-[0.95rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
+          className="mt-8 inline-block rounded-full border border-purple bg-purple px-[1.7rem] py-[0.85rem] text-[0.95rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
         >
           Talk to us
         </Link>

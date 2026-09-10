@@ -56,7 +56,7 @@ export default function Hero() {
       </div>
 
       <div className="relative z-[2] max-w-[880px]">
-        <p className="anim-fade-up mb-[1.4rem] text-[0.95rem] text-grey [animation-delay:0.4s]">
+        <p className="anim-fade-up mb-[0.6rem] font-display text-[clamp(1.3rem,2.6vw,1.9rem)] font-medium tracking-[-0.01em] text-ink [animation-delay:0.2s]">
           The future of metabolic healthcare starts here.
         </p>
 
@@ -80,13 +80,13 @@ export default function Hero() {
         >
           <a
             href="#twin"
-            className="rounded-[3px] border border-purple bg-purple px-[1.6rem] py-[0.85rem] text-[0.95rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
+            className="rounded-full border border-purple bg-purple px-[1.7rem] py-[0.85rem] text-[0.95rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
           >
             See how it works
           </a>
           <Link
             href="/contact"
-            className="rounded-[3px] border border-ink/25 px-[1.6rem] py-[0.85rem] text-[0.95rem] font-medium text-ink transition-colors hover:border-ink/60"
+            className="rounded-full border border-ink/25 px-[1.7rem] py-[0.85rem] text-[0.95rem] font-medium text-ink transition-colors hover:border-ink/60"
           >
             Talk to us
           </Link>

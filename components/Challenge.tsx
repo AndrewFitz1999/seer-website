@@ -12,10 +12,9 @@ const stats = [
 
 export default function Challenge() {
   return (
-    <RevealSection className="border-t border-ink/10 bg-paper-2 px-[8vw] py-[8vh]">
-      <div className="mx-auto grid max-w-[1200px] gap-14 lg:grid-cols-[1fr_1fr]">
+    <RevealSection className="bg-paper-2 px-[8vw] py-[12vh]">
+      <div className="mx-auto grid max-w-[1200px] gap-16 lg:grid-cols-[1fr_1fr]">
         <div>
-          <p className="mb-5 text-[0.95rem] text-grey">Challenge</p>
           <p className="max-w-[42ch] font-display text-[clamp(1.4rem,2.6vw,2rem)] leading-[1.4] font-medium text-ink">
             Metabolic dysfunction contributes to diabetes, obesity and cardiovascular disease,
             affecting billions of people and placing an immense burden on healthcare systems. The
@@ -30,10 +29,10 @@ export default function Challenge() {
         </div>
 
         <div>
-          <div className="grid grid-cols-2 gap-x-8 gap-y-10">
+          <div className="grid grid-cols-2 gap-x-10 gap-y-12">
             {stats.map((stat) => (
-              <div key={stat.label} className="border-l-2 border-purple/50 pl-5">
-                <div className="font-display text-[2.1rem] font-semibold leading-none text-ink">
+              <div key={stat.label}>
+                <div className="font-display text-[2.4rem] font-semibold leading-none tracking-[-0.01em] text-ink">
                   {stat.value}
                 </div>
                 <div className="mt-3 max-w-[22ch] text-[0.9rem] leading-[1.5] text-grey-dim">
@@ -42,7 +41,7 @@ export default function Challenge() {
               </div>
             ))}
           </div>
-          <p className="mt-8 text-[0.8rem] text-grey-dim">
+          <p className="mt-10 text-[0.8rem] text-grey-dim">
             Sources: CDC, IDF, WHO, WU Vienna / IIASA (2020&ndash;2050 projection, excluding
             informal care)
           </p>

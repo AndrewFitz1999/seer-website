@@ -2,9 +2,8 @@ import RevealSection from "./RevealSection";
 
 export default function Mission() {
   return (
-    <RevealSection className="border-t border-ink/10 px-[8vw] py-[10vh]">
+    <RevealSection className="px-[8vw] py-[14vh]">
       <div className="mx-auto max-w-[980px] text-center">
-        <p className="mb-6 text-[0.95rem] text-grey">Mission and vision</p>
         <p className="font-display text-[clamp(1.4rem,2.6vw,2.1rem)] leading-[1.5] font-medium text-ink">
           At SEER Health, we are building the intelligence layer for metabolic health: a
           personalised digital twin that unifies medical-device, wearable and health data to AI

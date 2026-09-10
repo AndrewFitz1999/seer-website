@@ -12,12 +12,11 @@ export default function DevelopersPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Developers"
         headline="Get API access"
         body="Tap into the Metabolic Digital Twin platform directly. Register your details and we'll notify you when access opens in your region."
       />
 
-      <section className="px-[8vw] py-[8vh]">
+      <section className="px-[8vw] py-[9vh]">
         <DeveloperAccess />
       </section>
     </main>

@@ -91,7 +91,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="rounded-[3px] border border-purple bg-purple px-4 py-2 font-body text-[0.85rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
+            className="rounded-full border border-purple bg-purple px-5 py-2 font-body text-[0.85rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
           >
             Talk to us
           </Link>
@@ -127,14 +127,12 @@ export default function Header() {
             : "pointer-events-none -translate-y-1 opacity-0"
         }`}
       >
-        <div className="border-t border-b border-ink/10 bg-paper shadow-[0_16px_40px_rgba(11,7,20,0.1)]">
-          <div className="mx-auto grid max-w-[1400px] grid-cols-3 gap-8 px-[8vw] py-10">
+        <div className="bg-paper shadow-[0_24px_60px_rgba(11,7,20,0.08)]">
+          <div className="mx-auto grid max-w-[1400px] grid-cols-3 gap-10 px-[8vw] py-12">
             {capabilityColumns.map((column) => (
               <div key={column.eyebrow}>
-                <p className="mb-4 text-[0.72rem] font-medium uppercase tracking-[0.1em] text-grey-dim">
-                  {column.eyebrow}
-                </p>
-                <div className="flex flex-col gap-5">
+                <p className="sr-only">{column.eyebrow}</p>
+                <div className="flex flex-col gap-6">
                   {column.items.map((item) => (
                     <Link
                       key={item.href}
@@ -142,10 +140,10 @@ export default function Header() {
                       onClick={() => setCapabilitiesOpen(false)}
                       className="group block"
                     >
-                      <div className="font-display text-[0.95rem] font-medium text-ink transition-colors group-hover:text-purple-soft">
+                      <div className="font-display text-[1.1rem] font-medium text-ink transition-colors group-hover:text-purple-soft">
                         {item.title}
                       </div>
-                      <div className="mt-1 max-w-[32ch] text-[0.82rem] leading-[1.5] text-grey">
+                      <div className="mt-1.5 max-w-[32ch] text-[0.88rem] leading-[1.55] text-grey">
                         {item.description}
                       </div>
                     </Link>

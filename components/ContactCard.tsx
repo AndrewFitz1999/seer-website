@@ -87,7 +87,7 @@ export default function ContactCard({
           <button
             type="submit"
             disabled={status === "sending"}
-            className="mt-1 w-fit rounded-[3px] border border-ink/25 px-[1.4rem] py-[0.7rem] text-[0.9rem] font-medium text-ink transition-colors hover:border-ink/60 disabled:opacity-60"
+            className="mt-1 w-fit rounded-full border border-ink/25 px-[1.5rem] py-[0.7rem] text-[0.9rem] font-medium text-ink transition-colors hover:border-ink/60 disabled:opacity-60"
           >
             {status === "sending" ? "Sending..." : "Send"}
           </button>

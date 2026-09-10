@@ -91,7 +91,7 @@ export default function DeveloperAccess() {
         />
         <button
           type="submit"
-          className="mt-1 w-fit rounded-[3px] border border-purple bg-purple px-[1.6rem] py-[0.85rem] text-[0.95rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
+          className="mt-1 w-fit rounded-full border border-purple bg-purple px-[1.7rem] py-[0.85rem] text-[0.95rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
         >
           Request access
         </button>

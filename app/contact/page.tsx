@@ -11,12 +11,11 @@ export default function ContactPage() {
   return (
     <main>
       <PageHero
-        eyebrow="Contact"
         headline="Talk to us"
         body="Whether you're exploring SEER Health as a partner, a platform, or an investment, we'd like to hear from you."
       />
 
-      <section className="px-[8vw] py-[8vh]">
+      <section className="px-[8vw] py-[9vh]">
         <div className="mx-auto grid max-w-[1000px] gap-14 md:grid-cols-2">
           <ContactCard
             title="General enquiries"

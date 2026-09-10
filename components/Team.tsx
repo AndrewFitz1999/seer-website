@@ -64,9 +64,11 @@ function PersonCard({
 
 export default function Team() {
   return (
-    <RevealSection id="team" className="border-t border-ink/10 bg-paper-2 px-[8vw] py-[8vh]">
+    <RevealSection id="team" className="bg-paper-2 px-[8vw] py-[12vh]">
       <div className="mx-auto max-w-[1200px]">
-        <p className="mb-10 text-[0.95rem] text-grey">Team</p>
+        <h2 className="mb-14 font-display text-[clamp(1.8rem,3.2vw,2.6rem)] font-medium leading-[1.2] tracking-[-0.01em] text-ink">
+          Team
+        </h2>
 
         <p className="mb-6 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-grey-dim">
           Co-founders
