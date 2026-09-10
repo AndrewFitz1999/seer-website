@@ -1,7 +1,10 @@
+import Image from "next/image";
+
 const coFounders = [
   {
     name: "Dean Minnock",
     initials: "DM",
+    photo: "/team/dean.png",
     role: "+10y Medical Device & Digital Health",
     degree: "PhD in Molecular Physiology",
     color: "#661FE4",
@@ -9,6 +12,7 @@ const coFounders = [
   {
     name: "Yuri Matsumoto",
     initials: "YM",
+    photo: "/team/yuri.jpg",
     role: "+10y Medical Devices & Pharma",
     degree: "MSci Medical Physics",
     color: "#8A52F0",
@@ -16,6 +20,7 @@ const coFounders = [
   {
     name: "Chloë Royston",
     initials: "CR",
+    photo: "/team/chloe.png",
     role: "+5y AI/ML & Digital Twin",
     degree: "PhD in AI/ML",
     color: "#0E8C7F",
@@ -23,6 +28,7 @@ const coFounders = [
   {
     name: "Benedikt Baumgartner",
     initials: "BB",
+    photo: "/team/benedikt.jpg",
     role: "+15y SaMD & MedTech",
     degree: "PhD in Computer Science",
     color: "#0E8C7F",
@@ -33,29 +39,42 @@ const advisors = [
   {
     name: "Maria Cristina Foss-Freitas",
     initials: "MF",
+    photo: "/team/maria.png",
     role: "+25y Physician-Scientist in Endocrinology",
     degree: "MD, PhD in Endocrinology & Cardiometabolism",
     color: "#661FE4",
   },
 ];
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 function PersonCard({
   person,
 }: {
-  person: { name: string; initials: string; role: string; degree: string; color: string };
+  person: { name: string; initials: string; photo?: string; role: string; degree: string; color: string };
 }) {
   return (
     <div className="flex gap-5 border-t border-ink/15 pt-6">
       <div
-        className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full"
-        style={{ border: `1px solid ${person.color}4D` }}
+        className="h-14 w-14 shrink-0 overflow-hidden rounded-full"
+        style={{ boxShadow: `0 0 0 1px ${person.color}4D` }}
       >
-        <div
-          className="flex h-10 w-10 items-center justify-center rounded-full font-display text-[0.9rem] font-medium text-white"
-          style={{ background: person.color }}
-        >
-          {person.initials}
-        </div>
+        {person.photo ? (
+          <Image
+            src={`${basePath}${person.photo}`}
+            alt={person.name}
+            width={112}
+            height={112}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <div
+            className="flex h-full w-full items-center justify-center font-display text-[0.9rem] font-medium text-white"
+            style={{ background: person.color }}
+          >
+            {person.initials}
+          </div>
+        )}
       </div>
       <div className="pt-1">
         <div className="font-display text-[1.15rem] font-medium text-ink">{person.name}</div>
