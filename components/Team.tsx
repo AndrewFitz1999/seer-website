@@ -1,28 +1,30 @@
-import RevealSection from "./RevealSection";
-
 const coFounders = [
   {
     name: "Dean Minnock",
     initials: "DM",
-    bio: "PhD in Molecular Physiology, over 10 years across medical device and digital health, co-founder leading SEER's clinical and physiological strategy.",
+    role: "+10y Medical Device & Digital Health",
+    degree: "PhD in Molecular Physiology",
     color: "#661FE4",
   },
   {
     name: "Yuri Matsumoto",
     initials: "YM",
-    bio: "MSci in Medical Physics, over 10 years across medical devices and pharma, co-founder focused on the platform's technical foundations.",
+    role: "+10y Medical Devices & Pharma",
+    degree: "MSci Medical Physics",
     color: "#8A52F0",
   },
   {
     name: "Chloë Royston",
     initials: "CR",
-    bio: "PhD in AI/ML, over 5 years in AI/ML and digital twin technology, co-founder leading the modeling behind the Metabolic Digital Twin.",
+    role: "+5y AI/ML & Digital Twin",
+    degree: "PhD in AI/ML",
     color: "#0E8C7F",
   },
   {
     name: "Benedikt Baumgartner",
     initials: "BB",
-    bio: "PhD in Computer Science, over 15 years in SaMD and MedTech, co-founder overseeing platform architecture and regulatory-grade software.",
+    role: "+15y SaMD & MedTech",
+    degree: "PhD in Computer Science",
     color: "#0E8C7F",
   },
 ];
@@ -31,7 +33,8 @@ const advisors = [
   {
     name: "Maria Cristina Foss-Freitas",
     initials: "MF",
-    bio: "MD, PhD in Endocrinology & Cardiometabolism, 25+ years as a physician-scientist, advising on clinical and endocrine strategy.",
+    role: "+25y Physician-Scientist in Endocrinology",
+    degree: "MD, PhD in Endocrinology & Cardiometabolism",
     color: "#661FE4",
   },
 ];
@@ -39,7 +42,7 @@ const advisors = [
 function PersonCard({
   person,
 }: {
-  person: { name: string; initials: string; bio: string; color: string };
+  person: { name: string; initials: string; role: string; degree: string; color: string };
 }) {
   return (
     <div className="flex gap-5 border-t border-ink/15 pt-6">
@@ -56,7 +59,8 @@ function PersonCard({
       </div>
       <div className="pt-1">
         <div className="font-display text-[1.15rem] font-medium text-ink">{person.name}</div>
-        <div className="mt-1.5 max-w-[46ch] text-[0.9rem] leading-[1.6] text-grey">{person.bio}</div>
+        <div className="mt-1.5 text-[0.9rem] text-grey">{person.role}</div>
+        <div className="mt-0.5 text-[0.85rem] text-grey-dim">{person.degree}</div>
       </div>
     </div>
   );
@@ -64,30 +68,24 @@ function PersonCard({
 
 export default function Team() {
   return (
-    <RevealSection id="team" className="bg-paper-2 px-[8vw] py-[12vh]">
-      <div className="mx-auto max-w-[1200px]">
-        <h2 className="mb-14 font-display text-[clamp(1.8rem,3.2vw,2.6rem)] font-medium leading-[1.2] tracking-[-0.01em] text-ink">
-          Team
-        </h2>
-
-        <p className="mb-6 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-grey-dim">
-          Co-founders
-        </p>
-        <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2">
-          {coFounders.map((person) => (
-            <PersonCard key={person.name} person={person} />
-          ))}
-        </div>
-
-        <p className="mt-16 mb-6 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-grey-dim">
-          Advisors
-        </p>
-        <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2">
-          {advisors.map((person) => (
-            <PersonCard key={person.name} person={person} />
-          ))}
-        </div>
+    <div className="mx-auto max-w-[1200px]">
+      <p className="mb-6 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-grey-dim">
+        Co-founders
+      </p>
+      <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2">
+        {coFounders.map((person) => (
+          <PersonCard key={person.name} person={person} />
+        ))}
       </div>
-    </RevealSection>
+
+      <p className="mt-16 mb-6 text-[0.8rem] font-medium uppercase tracking-[0.1em] text-grey-dim">
+        Advisors
+      </p>
+      <div className="grid grid-cols-1 gap-x-10 gap-y-12 md:grid-cols-2">
+        {advisors.map((person) => (
+          <PersonCard key={person.name} person={person} />
+        ))}
+      </div>
+    </div>
   );
 }

@@ -1,0 +1,52 @@
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+// The embedded screens are fixed-layout designs, not fluid pages — shrinking
+// their iframe viewport directly makes status bars and text overflow. Instead,
+// render at this native size and scale the whole result down via a CSS
+// container query, so it stays pixel-perfect at any card width.
+const NATIVE_WIDTH = 390;
+const NATIVE_HEIGHT = 844;
+
+export default function PhoneMockup({
+  src,
+  label,
+  className = "",
+}: {
+  src?: string;
+  label: string;
+  className?: string;
+}) {
+  return (
+    <div
+      className={`relative aspect-[9/19.5] w-full overflow-hidden rounded-[2.2rem] bg-paper shadow-[0_30px_70px_-20px_rgba(102,31,228,0.35)] ${className}`}
+    >
+      {src ? (
+        <div className="absolute inset-0" style={{ containerType: "inline-size" }}>
+          <div
+            className="absolute left-0 top-0 origin-top-left"
+            style={{
+              width: NATIVE_WIDTH,
+              height: NATIVE_HEIGHT,
+              transform: `scale(calc(100cqw / ${NATIVE_WIDTH}px))`,
+            }}
+          >
+            <iframe
+              src={`${basePath}${src}`}
+              title={label}
+              width={NATIVE_WIDTH}
+              height={NATIVE_HEIGHT}
+              className="border-0"
+              style={{ pointerEvents: "none" }}
+              loading="lazy"
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="flex h-full w-full flex-col items-center justify-center gap-2 border-2 border-dashed border-ink/20 bg-paper-2 px-6 text-center">
+          <span className="text-[0.8rem] text-grey-dim">Phone screen</span>
+          <span className="font-display text-[0.9rem] font-medium text-grey">{label}</span>
+        </div>
+      )}
+    </div>
+  );
+}

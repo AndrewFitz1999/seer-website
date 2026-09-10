@@ -46,7 +46,7 @@ export default function Hero() {
           <defs>
             <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#8A52F0" />
-              <stop offset="100%" stopColor="#43D9C8" />
+              <stop offset="100%" stopColor="#C9AFF5" />
             </linearGradient>
           </defs>
           <circle cx="200" cy="200" r="80" fill="none" stroke="url(#ringGrad)" strokeWidth="1" opacity="0.6" />

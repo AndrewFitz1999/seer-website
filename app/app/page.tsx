@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import PhoneMockup from "@/components/PhoneMockup";
 
 export const metadata: Metadata = {
   title: "MyAlly — SEER Health",
   description:
     "MyAlly brings your glucose, activity, wearables, labs, food and medications into one connected picture, so you can see how they relate and what to do next.",
 };
-
-const screens = [
-  "Today view",
-  "Glucose forecast",
-  "Contribute your data",
-];
 
 export default function MyAllyPage() {
   return (
@@ -22,19 +17,34 @@ export default function MyAllyPage() {
         body="Your personal Metabolic Digital Twin, on your phone. MyAlly brings your glucose, activity, wearables, labs, food and medications into one connected picture, so you can see how they relate and what to do next."
       />
 
-      <section className="bg-paper-2 px-[8vw] py-[10vh]">
-        <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-8 sm:grid-cols-3">
-          {screens.map((label) => (
-            <div key={label} className="mx-auto w-full max-w-[220px]">
-              <div className="flex aspect-[9/19.5] w-full flex-col items-center justify-center gap-2 rounded-[2rem] border-2 border-dashed border-ink/20 px-6 text-center">
-                <span className="text-[0.8rem] text-grey-dim">Phone screen</span>
-                <span className="font-display text-[0.9rem] font-medium text-grey">{label}</span>
-              </div>
-            </div>
-          ))}
+      <section className="overflow-hidden bg-paper-2 px-[8vw] py-[12vh]">
+        {/* Mobile: stacked, full-size phones — the fan below gets too narrow to render legibly */}
+        <div className="mx-auto flex max-w-[260px] flex-col items-center gap-10 md:hidden">
+          <PhoneMockup src="/mockups/seer-cycle-home.html" label="Cycle-aware home screen" className="w-full" />
+          <PhoneMockup label="Glucose forecast" className="w-full" />
+          <PhoneMockup label="Today view" className="w-full" />
         </div>
-        <p className="mt-8 text-center text-[0.8rem] text-grey-dim">
-          Screens to be supplied. Placeholders shown for layout only.
+
+        {/* Tablet+: staggered fan, real screen featured front and center */}
+        <div className="relative mx-auto hidden max-w-[640px] md:block">
+          <div
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-30 blur-[80px]"
+            style={{ background: "radial-gradient(circle, #8A52F0, transparent 70%)" }}
+          />
+          <div className="relative flex items-end justify-center">
+            <div className="relative z-0 w-[34%] -mr-8 translate-y-6 rotate-[-8deg] opacity-90">
+              <PhoneMockup label="Glucose forecast" />
+            </div>
+            <div className="relative z-10 w-[42%]">
+              <PhoneMockup src="/mockups/seer-cycle-home.html" label="Cycle-aware home screen" />
+            </div>
+            <div className="relative z-0 w-[34%] -ml-8 translate-y-6 rotate-[8deg] opacity-90">
+              <PhoneMockup label="Today view" />
+            </div>
+          </div>
+        </div>
+        <p className="mt-14 text-center text-[0.8rem] text-grey-dim">
+          Additional screens to be supplied. Placeholders shown for layout only.
         </p>
       </section>
 
@@ -49,10 +59,9 @@ export default function MyAllyPage() {
           <div>
             <p className="max-w-[54ch] text-[0.95rem] leading-[1.7] text-grey">
               With your consent, real-world data from MyAlly helps extend the same validation
-              work already underway in Type 1 and Type 2 diabetes, alongside our collaboration
-              with Medtronic Diabetes Care. If you are living with diabetes or another metabolic
-              condition, you can opt in to contribute your data to ongoing studies and help
-              improve the model for everyone who uses it.
+              work already underway in Type 1 and Type 2 diabetes. If you are living with
+              diabetes or another metabolic condition, you can opt in to contribute your data to
+              ongoing studies and help improve the model for everyone who uses it.
             </p>
             <Link
               href="/contact"

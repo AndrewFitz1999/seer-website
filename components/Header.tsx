@@ -83,6 +83,9 @@ export default function Header() {
           <Link href="/developers" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
             Developers
           </Link>
+          <Link href="/team" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
+            Team
+          </Link>
           <Link href="/contact" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
             Contact
           </Link>
@@ -186,6 +189,13 @@ export default function Header() {
               className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-purple-soft"
             >
               Developers
+            </Link>
+            <Link
+              href="/team"
+              onClick={() => setMenuOpen(false)}
+              className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-purple-soft"
+            >
+              Team
             </Link>
             <Link
               href="/contact"

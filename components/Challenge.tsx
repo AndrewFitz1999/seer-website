@@ -15,16 +15,16 @@ export default function Challenge() {
     <RevealSection className="bg-paper-2 px-[8vw] py-[12vh]">
       <div className="mx-auto grid max-w-[1200px] gap-16 lg:grid-cols-[1fr_1fr]">
         <div>
-          <p className="max-w-[42ch] font-display text-[clamp(1.4rem,2.6vw,2rem)] leading-[1.4] font-medium text-ink">
+          <h2 className="mb-6 font-display text-[clamp(1.8rem,3.2vw,2.6rem)] font-medium leading-[1.2] tracking-[-0.01em] text-ink">
+            Challenge
+          </h2>
+          <p className="max-w-[42ch] text-[1.05rem] leading-[1.7] text-grey">
             Metabolic dysfunction contributes to diabetes, obesity and cardiovascular disease,
             affecting billions of people and placing an immense burden on healthcare systems. The
             world has never generated more health data in monitoring and managing metabolic
             healthcare, but we still live in a reactive health environment. Despite tens of
             billions invested in wearables, medical devices and digital-health platforms, these
             technologies often provide fragmented views of what has already happened.
-          </p>
-          <p className="mt-6 max-w-[40ch] text-[0.95rem] leading-[1.7] text-grey">
-            Care is not optimised across technologies and services.
           </p>
         </div>
 
