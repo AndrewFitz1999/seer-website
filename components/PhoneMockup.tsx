@@ -7,15 +7,25 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const NATIVE_WIDTH = 390;
 const NATIVE_HEIGHT = 844;
 
+export type PhoneCrop = { x: number; y: number; width: number; height: number };
+
 export default function PhoneMockup({
   src,
   label,
+  crop,
   className = "",
 }: {
   src?: string;
   label: string;
+  // The design canvas draws its own phone shape with margin around it rather
+  // than filling the full render edge-to-edge — crop picks out just the
+  // phone rect (in native px) so it fills this card without that margin
+  // showing as a mismatched frame around it.
+  crop?: PhoneCrop;
   className?: string;
 }) {
+  const region = crop ?? { x: 0, y: 0, width: NATIVE_WIDTH, height: NATIVE_HEIGHT };
+
   return (
     <div
       className={`relative aspect-[9/19.5] w-full overflow-hidden rounded-[2.2rem] bg-paper shadow-[0_30px_70px_-20px_rgba(102,31,228,0.35)] ${className}`}
@@ -27,7 +37,7 @@ export default function PhoneMockup({
             style={{
               width: NATIVE_WIDTH,
               height: NATIVE_HEIGHT,
-              transform: `scale(calc(100cqw / ${NATIVE_WIDTH}px))`,
+              transform: `scale(calc(100cqw / ${region.width}px)) translate(${-region.x}px, ${-region.y}px)`,
             }}
           >
             <iframe

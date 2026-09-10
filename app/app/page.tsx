@@ -9,6 +9,11 @@ export const metadata: Metadata = {
     "MyAlly brings your glucose, activity, wearables, labs, food and medications into one connected picture, so you can see how they relate and what to do next.",
 };
 
+// The cycle-home design canvas draws its phone shape inset within a wider
+// artboard rather than filling it edge-to-edge — crop to just the phone rect
+// (measured from the source) so it fills the card cleanly.
+const CYCLE_HOME_CROP = { x: 20, y: 40, width: 350, height: 758 };
+
 export default function MyAllyPage() {
   return (
     <main>
@@ -20,7 +25,12 @@ export default function MyAllyPage() {
       <section className="overflow-hidden bg-paper-2 px-[8vw] py-[12vh]">
         {/* Mobile: stacked, full-size phones — the fan below gets too narrow to render legibly */}
         <div className="mx-auto flex max-w-[260px] flex-col items-center gap-10 md:hidden">
-          <PhoneMockup src="/mockups/seer-cycle-home.html" label="Cycle-aware home screen" className="w-full" />
+          <PhoneMockup
+            src="/mockups/seer-cycle-home.html"
+            label="Cycle-aware home screen"
+            crop={CYCLE_HOME_CROP}
+            className="w-full"
+          />
           <PhoneMockup label="Glucose forecast" className="w-full" />
           <PhoneMockup label="Today view" className="w-full" />
         </div>
@@ -36,7 +46,11 @@ export default function MyAllyPage() {
               <PhoneMockup label="Glucose forecast" />
             </div>
             <div className="relative z-10 w-[42%]">
-              <PhoneMockup src="/mockups/seer-cycle-home.html" label="Cycle-aware home screen" />
+              <PhoneMockup
+                src="/mockups/seer-cycle-home.html"
+                label="Cycle-aware home screen"
+                crop={CYCLE_HOME_CROP}
+              />
             </div>
             <div className="relative z-0 w-[34%] -ml-8 translate-y-6 rotate-[8deg] opacity-90">
               <PhoneMockup label="Today view" />
