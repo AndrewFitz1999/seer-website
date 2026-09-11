@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import PageHero from "@/components/PageHero";
 import PhoneMockup from "@/components/PhoneMockup";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
@@ -24,36 +23,47 @@ const mobileScreens = [screens[1], screens[0], screens[2]];
 export default function MyAllyPage() {
   return (
     <main>
-      <PageHero
-        headline="MyAlly"
-        body="Your personal Metabolic Digital Twin, on your phone. MyAlly brings your health into view using your glucose, activity, wearables, food and medications into one connected picture, so you can gain meaningful insights and make better decisions."
-      />
-
-      <section className="px-[8vw] py-[10vh]">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-14 lg:grid-cols-[1fr_1fr]">
+      <section className="px-[8vw] pt-[18vh] pb-[9vh]">
+        <div className="mx-auto grid max-w-[1200px] items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <h2 className="font-display text-[clamp(1.6rem,2.8vw,2.2rem)] font-medium leading-[1.25] tracking-[-0.01em] text-ink">
-              Works with the devices you already have
-            </h2>
-            <p className="mt-5 max-w-[46ch] text-[1rem] leading-[1.7] text-grey">
-              MyAlly connects directly to your CGM, wearables and insulin devices &mdash; Dexcom,
-              Whoop, Apple Watch, Oura Ring, NovoPen and more &mdash; so every reading feeds
-              straight into your Metabolic Digital Twin without manual logging.
+            <h1 className="max-w-[22ch] font-display text-[clamp(2.2rem,4.8vw,3.4rem)] font-medium leading-[1.12] tracking-[-0.01em] text-ink">
+              MyAlly
+            </h1>
+            <p className="mt-6 max-w-[60ch] text-[1.05rem] leading-[1.7] text-grey">
+              Your personal Metabolic Digital Twin, on your phone. MyAlly brings your health into
+              view using your glucose, activity, wearables, food and medications into one
+              connected picture, so you can gain meaningful insights and make better decisions.
             </p>
           </div>
-          <div className="mx-auto w-full max-w-[380px]">
+          <div className="mx-auto w-full max-w-[420px]">
+            {/* Desktop: cropped square so it sits neatly beside the opening text */}
+            <Image
+              src={`${basePath}/app/connected-devices-square.png`}
+              alt="MyAlly's Your devices screen, showing a Dexcom G7, Whoop, Apple Watch, Oura Ring and NovoPen all connected"
+              width={925}
+              height={925}
+              className="hidden h-auto w-full rounded-2xl lg:block"
+              priority
+            />
+            {/* Mobile: original portrait crop, stacked below the text */}
             <Image
               src={`${basePath}/app/connected-devices.png`}
               alt="MyAlly's Your devices screen, showing a Dexcom G7, Whoop, Apple Watch, Oura Ring and NovoPen all connected"
               width={925}
               height={1701}
-              className="h-auto w-full rounded-2xl"
+              className="h-auto w-full rounded-2xl lg:hidden"
             />
           </div>
         </div>
       </section>
 
       <section className="overflow-hidden bg-paper px-[8vw] py-[12vh]">
+        <div className="mx-auto mb-[6vh] max-w-[560px] text-center">
+          <h2 className="font-display text-[clamp(1.4rem,2.4vw,1.9rem)] font-medium leading-[1.3] tracking-[-0.01em] text-ink">
+            See what MyAlly shows you, every day
+          </h2>
+        </div>
+
         {/* Mobile: stacked, full-size phones — the fan below gets too narrow to render legibly */}
         <div className="mx-auto flex max-w-[260px] flex-col items-center gap-10 md:hidden">
           {mobileScreens.map((screen) => (
