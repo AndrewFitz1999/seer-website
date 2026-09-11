@@ -20,7 +20,7 @@ export default function Mission() {
             deliver AI native solutions grounded in each person&rsquo;s unique biology. Our vision
             is to enable safe, continuous and predictive care across metabolic healthcare, at
             home, in the clinic and through the devices people use, transforming reactive,
-            one-size-fits-all medicine into proactive, individualised care for everyone.
+            one-size-fits-all medicine into proactive, individualised care for all.
           </p>
         </div>
       </div>

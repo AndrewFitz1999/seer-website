@@ -15,7 +15,7 @@ const nodes = [
   },
   {
     key: "insight",
-    title: "Proactive applications",
+    title: "New Features and proactive applications",
     body: "Personalised, predictive and safe applications can be created.",
   },
 ];
@@ -45,12 +45,12 @@ export default function DigitalTwin() {
       <div className="mx-auto max-w-[1200px]">
         <div className={`reveal ${visible ? "reveal-in" : ""} max-w-[62ch]`}>
           <h2 className="font-display text-[clamp(1.8rem,3.2vw,2.6rem)] font-medium leading-[1.2] tracking-[-0.01em] text-ink">
-            What a Metabolic Digital Twin is
+            Understanding our Metabolic Digital Twin +
           </h2>
           <p className="mt-5 text-[1.05rem] leading-[1.7] text-grey">
-            Our MDT platform transforms real world data into personalized and predictive
-            insights, creating a variety of personalized applications that unlock better
-            decisions, safety and efficiency.
+            <strong className="font-semibold text-ink">Our MDT+</strong> platform transforms real
+            world data into personalized and predictive insights, creating a variety of
+            personalized applications that unlock better decisions, safety and efficiency.
           </p>
         </div>
 
