@@ -1,5 +1,7 @@
+import Image from "next/image";
 import RevealSection from "./RevealSection";
-import SolutionImage from "./SolutionImage";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export default function Solution() {
   return (
@@ -19,7 +21,14 @@ export default function Solution() {
             </p>
           </div>
 
-          <SolutionImage />
+          <Image
+            src={`${basePath}/solution/solution-image.png`}
+            alt="A translucent human figure showing connected metabolic data points — CGM, AID, MDI, software development, clinical enhancement and wellness insights — radiating outward"
+            width={1301}
+            height={876}
+            className="mx-auto h-auto w-full max-w-[560px]"
+            priority
+          />
         </div>
       </div>
     </RevealSection>

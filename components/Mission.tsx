@@ -2,7 +2,7 @@ import RevealSection from "./RevealSection";
 
 export default function Mission() {
   return (
-    <RevealSection className="relative overflow-hidden px-[8vw] py-[14vh]">
+    <RevealSection className="relative overflow-hidden px-[8vw] py-[12vh]">
       <div
         className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/3 rounded-full opacity-25 blur-[100px]"
         style={{ background: "radial-gradient(circle, #C9AFF5, transparent 70%)" }}
