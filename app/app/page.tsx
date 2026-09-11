@@ -31,7 +31,7 @@ export default function MyAllyPage() {
               src={`${basePath}/app/connected-devices-square.png`}
               alt="MyAlly's Your devices screen, showing a Dexcom G7, Whoop, Apple Watch, Oura Ring and NovoPen all connected"
               width={925}
-              height={925}
+              height={1110}
               className="hidden h-auto w-full rounded-2xl lg:block"
               priority
             />
