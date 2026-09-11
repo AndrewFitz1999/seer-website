@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import PhoneMockup from "@/components/PhoneMockup";
 
@@ -51,31 +50,6 @@ export default function MyAllyPage() {
             <div className="relative z-0 w-[34%] -ml-8 translate-y-6 rotate-[8deg] opacity-90">
               <PhoneMockup src={screens[2].src} label={screens[2].label} />
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contribute" className="px-[8vw] py-[10vh]">
-        <div className="mx-auto grid max-w-[1200px] gap-10 lg:grid-cols-[1fr_1fr] lg:items-end">
-          <div>
-            <p className="max-w-[22ch] font-display text-[clamp(1.5rem,2.8vw,2.1rem)] leading-[1.35] font-medium text-ink">
-              Your data can help make it more accurate for the next person.
-            </p>
-          </div>
-
-          <div>
-            <p className="max-w-[54ch] text-[0.95rem] leading-[1.7] text-grey">
-              With your consent, real-world data from MyAlly helps extend the same validation
-              work already underway in Type 1 and Type 2 diabetes. If you are living with
-              diabetes or another metabolic condition, you can opt in to contribute your data to
-              ongoing studies and help improve the model for everyone who uses it.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-block rounded-full border border-ink/25 px-[1.7rem] py-[0.85rem] text-[0.95rem] font-medium text-ink transition-colors hover:border-ink/60"
-            >
-              Ask about current studies
-            </Link>
           </div>
         </div>
       </section>

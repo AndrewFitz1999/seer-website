@@ -83,8 +83,8 @@ export default function Header() {
           <Link href="/team" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
             Team
           </Link>
-          <Link href="/contact" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
-            Contact
+          <Link href="/help-our-cause" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
+            Help Our Cause
           </Link>
         </nav>
 
@@ -188,11 +188,11 @@ export default function Header() {
               Team
             </Link>
             <Link
-              href="/contact"
+              href="/help-our-cause"
               onClick={() => setMenuOpen(false)}
               className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-purple-soft"
             >
-              Contact
+              Help Our Cause
             </Link>
           </div>
         </div>

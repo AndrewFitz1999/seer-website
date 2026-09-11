@@ -12,7 +12,7 @@ export default function TeamPage() {
     <main>
       <PageHero
         headline="Team"
-        body="Meet the visionary co-founders and advisory team building the Metabolic Digital Twin and delivering AI native solutions for metabolic healthcare."
+        body="Meet the visionary co-founders and advisory team building our MDT+ Platform and delivering AI native solutions for metabolic healthcare."
       />
 
       <section className="px-[8vw] py-[6vh]">

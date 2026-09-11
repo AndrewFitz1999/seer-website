@@ -11,10 +11,12 @@ export default function ContactCard({
   title,
   context,
   subjectPrefix,
+  submitLabel = "Send",
 }: {
   title: string;
   context: string;
   subjectPrefix: string;
+  submitLabel?: string;
 }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -89,7 +91,7 @@ export default function ContactCard({
             disabled={status === "sending"}
             className="mt-1 w-fit rounded-full border border-ink/25 px-[1.5rem] py-[0.7rem] text-[0.9rem] font-medium text-ink transition-colors hover:border-ink/60 disabled:opacity-60"
           >
-            {status === "sending" ? "Sending..." : "Send"}
+            {status === "sending" ? "Sending..." : submitLabel}
           </button>
           {status === "error" && (
             <p className="text-[0.8rem] text-grey-dim">
