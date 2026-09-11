@@ -5,15 +5,17 @@ import Image from "next/image";
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
-// Points sampled along the solid curve in proactive-applications.png (in the
-// image's native 1448x1086 pixel space), used to drive the marker + dropline
-// back and forth along the line. calcMode="linear" + these keyTimes give an
-// even, evenly-paced ping-pong traversal.
+// Points traced pixel-by-pixel along the solid curve's actual stroke in
+// proactive-applications.png (native 1448x1086 space), used to drive the
+// marker + dropline back and forth along the exact line. calcMode="linear"
+// + these keyTimes give an even, evenly-paced ping-pong traversal.
 const GRAPH_KEY_TIMES =
-  "0;0.0625;0.125;0.1875;0.25;0.3125;0.375;0.4375;0.5;0.5625;0.625;0.6875;0.75;0.8125;0.875;0.9375;1";
-const GRAPH_X_VALUES = "195;340;470;560;650;780;950;1150;1250;1150;950;780;650;560;470;340;195";
-const GRAPH_Y_VALUES = "680;540;410;345;390;495;568;600;606;600;568;495;390;345;410;540;680";
-const GRAPH_BASELINE_Y = 745;
+  "0.0;0.0278;0.0556;0.0833;0.1111;0.1389;0.1667;0.1944;0.2222;0.25;0.2778;0.3056;0.3333;0.3611;0.3889;0.4167;0.4444;0.4722;0.5;0.5278;0.5556;0.5833;0.6111;0.6389;0.6667;0.6944;0.7222;0.75;0.7778;0.8056;0.8333;0.8611;0.8889;0.9167;0.9444;0.9722;1.0";
+const GRAPH_X_VALUES =
+  "200;260;320;380;440;500;540;600;660;720;780;840;900;960;1020;1080;1140;1190;1270;1190;1140;1080;1020;960;900;840;780;720;660;600;540;500;440;380;320;260;200";
+const GRAPH_Y_VALUES =
+  "679;651;587;492;399;346;337;362;418;477;523;553;573;587;596;603;608;611;611;611;608;603;596;587;573;553;523;477;418;362;337;346;399;492;587;651;679";
+const GRAPH_BASELINE_Y = 748;
 
 // Positions (as % of the metabolic-twin image) of the small white dots
 // along each of the four connector lines, measured from the source image.
@@ -119,9 +121,9 @@ export default function DigitalTwin() {
               />
               <svg viewBox="0 0 1448 1086" className="pointer-events-none absolute inset-0 h-full w-full" aria-hidden="true">
                 <line
-                  x1={195}
-                  y1={680}
-                  x2={195}
+                  x1={200}
+                  y1={679}
+                  x2={200}
                   y2={GRAPH_BASELINE_Y}
                   stroke="var(--color-purple-soft)"
                   strokeWidth={3}
@@ -153,7 +155,7 @@ export default function DigitalTwin() {
                     values={GRAPH_Y_VALUES}
                   />
                 </line>
-                <circle cx={195} cy={680} r={11} fill="#fff" stroke="var(--color-purple-soft)" strokeWidth={5}>
+                <circle cx={200} cy={679} r={11} fill="#fff" stroke="var(--color-purple-soft)" strokeWidth={5}>
                   <animate
                     attributeName="cx"
                     dur="16s"
