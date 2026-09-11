@@ -10,10 +10,10 @@ export default function Solution() {
           </h2>
           <p className="mt-5 text-[1.05rem] leading-[1.7] text-grey">
             Our solution is to build a metabolic digital twin platform, which we refer to as our{" "}
-            <strong className="font-semibold text-ink">MDT</strong> platform, that transforms real
-            world data into an individualised personal care solution, offering predictive insights
-            and creating a variety of applications that unlock better decisions, safety and
-            efficiency.
+            <strong className="font-semibold text-ink">MDT+</strong> platform, that transforms
+            real world data into an individualised personal care solution, offering predictive
+            insights and creating a variety of applications that unlock better decisions, safety
+            and efficiency.
           </p>
         </div>
       </div>

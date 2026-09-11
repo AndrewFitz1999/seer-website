@@ -48,7 +48,7 @@ export default function DigitalTwin() {
             Understanding our Metabolic Digital Twin +
           </h2>
           <p className="mt-5 text-[1.05rem] leading-[1.7] text-grey">
-            <strong className="font-semibold text-ink">Our MDT+</strong> platform transforms real
+            Our <strong className="font-semibold text-ink">MDT+</strong> platform transforms real
             world data into personalized and predictive insights, creating a variety of
             personalized applications that unlock better decisions, safety and efficiency.
           </p>
