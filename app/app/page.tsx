@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
-import PhoneMockup, { type PhoneCrop } from "@/components/PhoneMockup";
+import PhoneMockup from "@/components/PhoneMockup";
 
 export const metadata: Metadata = {
   title: "MyAlly — SEER Health",
@@ -9,16 +9,10 @@ export const metadata: Metadata = {
     "MyAlly brings your glucose, activity, wearables, labs, food and medications into one connected picture, so you can see how they relate and what to do next.",
 };
 
-// Every screen shares the same design-canvas template, which draws its phone
-// shape inset within a wider artboard rather than filling it edge-to-edge —
-// crop to just the phone rect (measured from the source) so each fills its
-// card cleanly.
-const SCREEN_CROP: PhoneCrop = { x: 20, y: 40, width: 350, height: 758 };
-
 const screens = [
-  { src: "/mockups/seer-cycle-insights.html", label: "Cycle Insights" },
-  { src: "/mockups/seer-cycle-home.html", label: "Cycle-aware home screen" },
-  { src: "/mockups/seer-todays-guidance.html", label: "Today's guidance" },
+  { src: "/mockups/seer-cycle-insights.png", label: "Cycle Insights" },
+  { src: "/mockups/seer-cycle-home.png", label: "Cycle-aware home screen" },
+  { src: "/mockups/seer-todays-guidance.png", label: "Today's guidance" },
 ];
 
 export default function MyAllyPage() {
@@ -33,13 +27,7 @@ export default function MyAllyPage() {
         {/* Mobile: stacked, full-size phones — the fan below gets too narrow to render legibly */}
         <div className="mx-auto flex max-w-[260px] flex-col items-center gap-10 md:hidden">
           {screens.map((screen) => (
-            <PhoneMockup
-              key={screen.src}
-              src={screen.src}
-              label={screen.label}
-              crop={SCREEN_CROP}
-              className="w-full"
-            />
+            <PhoneMockup key={screen.src} src={screen.src} label={screen.label} className="w-full" />
           ))}
         </div>
 
@@ -51,13 +39,13 @@ export default function MyAllyPage() {
           />
           <div className="relative flex items-end justify-center">
             <div className="relative z-0 w-[34%] -mr-8 translate-y-6 rotate-[-8deg] opacity-90">
-              <PhoneMockup src={screens[0].src} label={screens[0].label} crop={SCREEN_CROP} />
+              <PhoneMockup src={screens[0].src} label={screens[0].label} />
             </div>
             <div className="relative z-10 w-[42%]">
-              <PhoneMockup src={screens[1].src} label={screens[1].label} crop={SCREEN_CROP} />
+              <PhoneMockup src={screens[1].src} label={screens[1].label} priority />
             </div>
             <div className="relative z-0 w-[34%] -ml-8 translate-y-6 rotate-[8deg] opacity-90">
-              <PhoneMockup src={screens[2].src} label={screens[2].label} crop={SCREEN_CROP} />
+              <PhoneMockup src={screens[2].src} label={screens[2].label} />
             </div>
           </div>
         </div>
