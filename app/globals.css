@@ -90,6 +90,43 @@ body {
   animation: blink 0.9s step-end infinite;
 }
 
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-slow {
+  animation: floatSlow 5.5s ease-in-out infinite;
+}
+
+@keyframes dotBlink {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.line-dot-blink {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow: 0 0 6px 2px currentColor;
+  transform: translate(-50%, -50%);
+  animation: dotBlink 2.4s ease-in-out infinite;
+}
+
 /* generic scroll-reveal, toggled by IntersectionObserver in RevealSection */
 .reveal {
   opacity: 0;
