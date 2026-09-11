@@ -15,8 +15,7 @@ export default function Footer() {
         </div>
         <p className="mt-6 max-w-[80ch] text-center text-[0.72rem] leading-[1.6] text-grey-dim sm:text-left">
           Any claim on this page has not been reviewed by the FDA or other governing health
-          authority. SEER Health&rsquo;s platform is not intended to diagnose, treat, cure, or
-          prevent any disease.
+          authority.
         </p>
       </div>
     </footer>

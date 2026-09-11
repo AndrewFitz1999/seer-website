@@ -6,20 +6,17 @@ const nodes = [
   {
     key: "input",
     title: "Real-world data",
-    body: "Glucose, insulin and activity from everyday life",
-    color: "#8983A0",
+    body: "Continuous data offered from medical devices, wearables and medical reports.",
   },
   {
     key: "twin",
     title: "Metabolic Digital Twin",
-    body: "A living model of how your body responds",
-    color: "#8A52F0",
+    body: "A dynamic virtual replica of an individual's metabolism.",
   },
   {
     key: "insight",
-    title: "Predictive insight",
-    body: "Clear, forward-looking guidance",
-    color: "#43D9C8",
+    title: "Proactive applications",
+    body: "Personalised, predictive and safe applications can be created.",
   },
 ];
 
@@ -44,11 +41,7 @@ export default function DigitalTwin() {
   }, []);
 
   return (
-    <section
-      ref={ref}
-      id="twin"
-      className="px-[8vw] py-[12vh]"
-    >
+    <section ref={ref} id="twin" className="px-[8vw] py-[12vh]">
       <div className="mx-auto max-w-[1200px]">
         <div className={`reveal ${visible ? "reveal-in" : ""} max-w-[62ch]`}>
           <h2 className="font-display text-[clamp(1.8rem,3.2vw,2.6rem)] font-medium leading-[1.2] tracking-[-0.01em] text-ink">
@@ -61,55 +54,21 @@ export default function DigitalTwin() {
           </p>
         </div>
 
-        <div className="mt-[8vh]">
-          <svg
-            viewBox="0 0 900 200"
-            className="mx-auto block h-auto w-full max-w-[820px]"
-          >
-            <line
-              x1="168" y1="100" x2="402" y2="100"
-              stroke="#8A52F0" strokeWidth="1.5"
-              strokeDasharray="240"
-              strokeDashoffset={visible ? 0 : 240}
-              style={{ transition: "stroke-dashoffset 1.1s cubic-bezier(.16,1,.3,1) 0.3s" }}
-            />
-            <line
-              x1="498" y1="100" x2="732" y2="100"
-              stroke="#43D9C8" strokeWidth="1.5"
-              strokeDasharray="240"
-              strokeDashoffset={visible ? 0 : 240}
-              style={{ transition: "stroke-dashoffset 1.1s cubic-bezier(.16,1,.3,1) 0.75s" }}
-            />
-
-            {nodes.map((n, i) => {
-              const cx = 120 + i * 330;
-              const delay = 0.1 + i * 0.35;
-              return (
-                <g
-                  key={n.key}
-                  style={{
-                    opacity: visible ? 1 : 0,
-                    transform: visible ? "scale(1)" : "scale(0.85)",
-                    transformOrigin: `${cx}px 100px`,
-                    transformBox: "view-box",
-                    transition: `opacity 0.7s ease-out ${delay}s, transform 0.7s cubic-bezier(.16,1,.3,1) ${delay}s`,
-                  }}
-                >
-                  <circle cx={cx} cy="100" r="48" fill="none" stroke={n.color} strokeWidth="1" opacity="0.5" />
-                  <circle cx={cx} cy="100" r="30" fill={n.color} opacity={i === 1 ? 1 : 0.9} />
-                </g>
-              );
-            })}
-          </svg>
-
-          <div className="mx-auto mt-8 grid max-w-[820px] grid-cols-1 gap-8 sm:grid-cols-3">
-            {nodes.map((n) => (
-              <div key={n.key} className="text-center">
-                <div className="font-display text-[0.95rem] font-medium text-ink">{n.title}</div>
-                <div className="mt-2 text-[0.85rem] leading-[1.5] text-grey-dim">{n.body}</div>
+        <div className="mt-[8vh] grid grid-cols-1 gap-10 sm:grid-cols-3">
+          {nodes.map((n, i) => (
+            <div
+              key={n.key}
+              className={`reveal ${visible ? "reveal-in" : ""}`}
+              style={{ transitionDelay: visible ? `${i * 0.15}s` : "0s" }}
+            >
+              <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-ink/20 bg-paper-2 px-6 text-center">
+                <span className="text-[0.8rem] text-grey-dim">Image placeholder</span>
+                <span className="font-display text-[0.9rem] font-medium text-grey">{n.title}</span>
               </div>
-            ))}
-          </div>
+              <div className="mt-5 font-display text-[0.95rem] font-medium text-ink">{n.title}</div>
+              <div className="mt-2 text-[0.85rem] leading-[1.5] text-grey-dim">{n.body}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

@@ -22,7 +22,7 @@ const coFounders = [
     initials: "CR",
     photo: "/team/chloe.png",
     role: "+5y AI/ML & Digital Twin",
-    degree: "PhD in AI/ML",
+    degree: "PhD candidate in AI/ML",
     color: "#0E8C7F",
   },
   {
@@ -56,20 +56,20 @@ function PersonCard({
   return (
     <div className="flex gap-5 border-t border-ink/15 pt-6">
       <div
-        className="h-14 w-14 shrink-0 overflow-hidden rounded-full"
+        className="h-24 w-24 shrink-0 overflow-hidden rounded-full"
         style={{ boxShadow: `0 0 0 1px ${person.color}4D` }}
       >
         {person.photo ? (
           <Image
             src={`${basePath}${person.photo}`}
             alt={person.name}
-            width={112}
-            height={112}
+            width={192}
+            height={192}
             className="h-full w-full object-cover"
           />
         ) : (
           <div
-            className="flex h-full w-full items-center justify-center font-display text-[0.9rem] font-medium text-white"
+            className="flex h-full w-full items-center justify-center font-display text-[1.3rem] font-medium text-white"
             style={{ background: person.color }}
           >
             {person.initials}

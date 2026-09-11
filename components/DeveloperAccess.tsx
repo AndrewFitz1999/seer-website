@@ -16,6 +16,7 @@ const regions = [
 
 export default function DeveloperAccess() {
   const [regionValue, setRegionValue] = useState(regions[0].value);
+  const [checked, setChecked] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
@@ -53,15 +54,26 @@ export default function DeveloperAccess() {
           ))}
         </select>
 
-        <p className="mt-6 max-w-[26ch] font-display text-[clamp(1.3rem,2.4vw,1.8rem)] leading-[1.35] font-medium text-ink">
-          {region.available
-            ? `The MDT platform is live in ${region.label}.`
-            : "The MDT platform is not yet deployed in your region."}
-        </p>
-        <p className="mt-6 max-w-[46ch] text-[0.95rem] leading-[1.7] text-grey">
-          Join the waitlist and we&rsquo;ll reach out as soon as access opens up in{" "}
-          {region.label}.
-        </p>
+        {!checked ? (
+          <button
+            type="button"
+            onClick={() => setChecked(true)}
+            className="mt-6 rounded-full border border-purple bg-purple px-[1.7rem] py-[0.85rem] text-[0.95rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
+          >
+            Check availability
+          </button>
+        ) : (
+          <>
+            <p className="mt-6 max-w-[26ch] font-display text-[clamp(1.3rem,2.4vw,1.8rem)] leading-[1.35] font-medium text-ink">
+              {region.available
+                ? `The MDT platform is live in ${region.label}.`
+                : "The MDT platform is not yet deployed in your region."}
+            </p>
+            <p className="mt-6 max-w-[46ch] text-[0.95rem] leading-[1.7] text-grey">
+              Join the waitlist and we&rsquo;ll reach out as soon as access opens up.
+            </p>
+          </>
+        )}
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-6">

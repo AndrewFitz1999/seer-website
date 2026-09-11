@@ -49,7 +49,7 @@ export default function Header() {
 
       <div className="mx-auto flex max-w-[1400px] items-center justify-between px-[8vw] py-4">
         <Link href="/" className="flex items-center gap-3">
-          <Mark className="h-6 w-auto shrink-0" />
+          <Mark className="h-8 w-auto shrink-0" />
           <span className="font-display text-[0.95rem] font-semibold tracking-[0.01em] text-ink">
             SEER Health
           </span>
@@ -80,9 +80,6 @@ export default function Header() {
             </button>
           </div>
 
-          <Link href="/developers" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
-            Developers
-          </Link>
           <Link href="/team" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
             Team
           </Link>
@@ -183,13 +180,6 @@ export default function Header() {
 
             <div className="my-2 h-px bg-ink/10" />
 
-            <Link
-              href="/developers"
-              onClick={() => setMenuOpen(false)}
-              className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-purple-soft"
-            >
-              Developers
-            </Link>
             <Link
               href="/team"
               onClick={() => setMenuOpen(false)}

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import DeveloperAccess from "@/components/DeveloperAccess";
 
 export const metadata: Metadata = {
-  title: "Metabolic API — SEER Health",
+  title: "MDT+ API — SEER Health",
   description:
     "Integrate with the Metabolic Digital Twin directly from your own product and harness the power of our metabolic digital twin engine.",
 };
@@ -12,11 +13,11 @@ export default function PlatformPage() {
   return (
     <main>
       <PageHero
-        headline="Metabolic API"
+        headline="MDT+ API"
         body="Integrate with the Metabolic Digital Twin directly from your own product. Send real world data, connect your data, and transform your product experience and offerings by harnessing the power of our metabolic digital twin engine."
       >
         <Link
-          href="/developers"
+          href="#access"
           className="mt-8 inline-block rounded-full border border-purple bg-purple px-[1.7rem] py-[0.85rem] text-[0.95rem] font-medium text-white transition-colors hover:border-purple-soft hover:bg-purple-soft"
         >
           Get API access
@@ -47,15 +48,8 @@ export default function PlatformPage() {
         </div>
       </section>
 
-      <section className="px-[8vw] py-[9vh]">
-        <p className="max-w-[54ch] text-[0.95rem] leading-[1.7] text-grey">
-          This page is intentionally high-level. For access details, integration requirements and
-          timelines, visit the{" "}
-          <Link href="/developers" className="text-purple-soft underline underline-offset-4 hover:text-purple">
-            Developers
-          </Link>{" "}
-          page.
-        </p>
+      <section id="access" className="px-[8vw] py-[9vh]">
+        <DeveloperAccess />
       </section>
     </main>
   );

@@ -14,8 +14,8 @@ export const capabilityColumns: CapabilityColumn[] = [
     eyebrow: "For your platform",
     items: [
       {
-        title: "Metabolic API",
-        description: "Tap into the Twin's predictions in your own product, no infra to build.",
+        title: "MDT+ API",
+        description: "Leverage the power of our MDT engine in your own product.",
         href: "/platform",
       },
     ],
@@ -25,7 +25,7 @@ export const capabilityColumns: CapabilityColumn[] = [
     items: [
       {
         title: "MyAlly",
-        description: "Your glucose, activity, wearables, labs, food and medications, in one connected picture.",
+        description: "Your unique digital twin offering guidance and insights on your health journey.",
         href: "/app",
       },
     ],
@@ -34,8 +34,8 @@ export const capabilityColumns: CapabilityColumn[] = [
     eyebrow: "For clinicians",
     items: [
       {
-        title: "Clinician Solution",
-        description: "See patients' metabolic picture inside your workflow.",
+        title: "MDT+ For Healthcare",
+        description: "Allowing your clinic to deliver AI Native personalised individual care at scale.",
         href: "/clinicians",
       },
     ],

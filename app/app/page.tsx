@@ -24,7 +24,7 @@ export default function MyAllyPage() {
     <main>
       <PageHero
         headline="MyAlly"
-        body="Your personal Metabolic Digital Twin, on your phone. MyAlly brings your glucose, activity, wearables, labs, food and medications into one connected picture, so you can see how they relate and what to do next."
+        body="Your personal Metabolic Digital Twin, on your phone. MyAlly brings your health into view using your glucose, activity, wearables, food and medications into one connected picture, so you can gain meaningful insights and make better decisions."
       />
 
       <section className="overflow-hidden bg-paper px-[8vw] py-[12vh]">

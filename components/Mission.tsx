@@ -15,12 +15,12 @@ export default function Mission() {
 
         <div className="rounded-[1.75rem] border border-ink/10 bg-paper px-[3rem] py-[3.2rem] shadow-[0_20px_50px_-25px_rgba(11,7,20,0.25)]">
           <p className="font-display text-[clamp(1.3rem,2.4vw,1.85rem)] leading-[1.6] font-medium text-ink">
-            At SEER Health, we are building the intelligence layer for metabolic health: a
-            personalised digital twin that unifies medical-device, wearable and health data to AI
-            native solutions grounded in each person&rsquo;s unique biology. Our vision is to enable
-            safe, continuous and predictive care across metabolic health, at home, in the clinic
-            and through the devices people use transforming reactive, one-size-fits-all medicine
-            into personalised care with foresight for billions of people.
+            At SEER Health, we are building the intelligence layer for metabolic healthcare: a
+            personalised digital twin that unifies medical-devices, wearable and health data to
+            deliver AI native solutions grounded in each person&rsquo;s unique biology. Our vision
+            is to enable safe, continuous and predictive care across metabolic healthcare, at
+            home, in the clinic and through the devices people use, transforming reactive,
+            one-size-fits-all medicine into proactive, individualised care for everyone.
           </p>
         </div>
       </div>

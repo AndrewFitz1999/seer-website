@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
-  title: "Clinician Solution — SEER Health",
+  title: "MDT+ For Healthcare — SEER Health",
   description:
     "Combat and improve metabolic healthcare at the most important point of care: for the clinicians, clinics and hospitals on the frontline.",
 };
@@ -12,7 +12,7 @@ export default function CliniciansPage() {
   return (
     <main>
       <PageHero
-        headline="Clinician Solution"
+        headline="MDT+ For Healthcare"
         body="Our goal is to combat and improve metabolic healthcare at the most important point of care: for the clinicians, clinics and hospitals on the frontline. If you'd like to explore opportunities and understand the impact our MDT platform can have on improving outcomes for each individual in your care, reach out and contact us to learn more."
       >
         <Link
