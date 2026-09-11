@@ -137,6 +137,17 @@ body {
   animation: flowDash 1.1s linear infinite;
 }
 
+@keyframes ringGlowTravel {
+  to {
+    stroke-dashoffset: -1;
+  }
+}
+
+.solution-ring-glow {
+  filter: drop-shadow(0 0 6px #ffffff) drop-shadow(0 0 14px #8a52f0);
+  animation: ringGlowTravel 3.2s linear infinite;
+}
+
 /* generic scroll-reveal, toggled by IntersectionObserver in RevealSection */
 .reveal {
   opacity: 0;
