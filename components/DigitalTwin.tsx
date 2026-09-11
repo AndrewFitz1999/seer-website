@@ -32,10 +32,12 @@ const lineDots = [
 
 function FlowArrow() {
   return (
-    <svg width="56" height="20" viewBox="0 0 56 20" className="mt-4" aria-hidden="true">
-      <line x1="2" y1="10" x2="42" y2="10" stroke="#C9AFF5" strokeWidth={2} strokeDasharray="6 5" strokeLinecap="round" className="flow-arrow-dash" />
-      <path d="M36,3 L46,10 L36,17" fill="none" stroke="#C9AFF5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <div className="flex shrink-0 items-center justify-center py-2 sm:self-center sm:py-0">
+      <svg width="56" height="20" viewBox="0 0 56 20" className="rotate-90 sm:rotate-0" aria-hidden="true">
+        <line x1="2" y1="10" x2="42" y2="10" stroke="#C9AFF5" strokeWidth={2} strokeDasharray="6 5" strokeLinecap="round" className="flow-arrow-dash" />
+        <path d="M36,3 L46,10 L36,17" fill="none" stroke="#C9AFF5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    </div>
   );
 }
 
@@ -73,10 +75,10 @@ export default function DigitalTwin() {
           </p>
         </div>
 
-        <div className="mt-[8vh] grid grid-cols-1 gap-10 items-start sm:grid-cols-3">
+        <div className="mt-[8vh] flex flex-col items-stretch gap-2 sm:flex-row sm:items-start sm:gap-4">
           {/* Real-world data: scaled down to match the twin's own figure size, gently floating */}
           <div
-            className={`reveal ${visible ? "reveal-in" : ""}`}
+            className={`reveal ${visible ? "reveal-in" : ""} sm:min-w-0 sm:flex-1`}
             style={{ transitionDelay: visible ? "0s" : "0s" }}
           >
             <div className="mx-auto w-[56%] float-slow">
@@ -92,11 +94,15 @@ export default function DigitalTwin() {
             <div className="mt-2 text-[0.85rem] leading-[1.5] text-grey-dim">
               Continuous data offered from medical devices, wearables and medical reports.
             </div>
-            <FlowArrow />
           </div>
 
+          <FlowArrow />
+
           {/* Metabolic Digital Twin: floating, with blinking dots along each data line */}
-          <div className={`reveal ${visible ? "reveal-in" : ""}`} style={{ transitionDelay: visible ? "0.15s" : "0s" }}>
+          <div
+            className={`reveal ${visible ? "reveal-in" : ""} sm:min-w-0 sm:flex-1`}
+            style={{ transitionDelay: visible ? "0.15s" : "0s" }}
+          >
             <div className="float-slow relative">
               <Image
                 src={`${basePath}/digital-twin/metabolic-twin.png`}
@@ -117,11 +123,15 @@ export default function DigitalTwin() {
             <div className="mt-2 text-[0.85rem] leading-[1.5] text-grey-dim">
               A dynamic virtual replica of an individual&rsquo;s metabolism.
             </div>
-            <FlowArrow />
           </div>
 
+          <FlowArrow />
+
           {/* Graph: a marker rides the solid curve back and forth, with a dropline to the baseline */}
-          <div className={`reveal ${visible ? "reveal-in" : ""}`} style={{ transitionDelay: visible ? "0.3s" : "0s" }}>
+          <div
+            className={`reveal ${visible ? "reveal-in" : ""} sm:min-w-0 sm:flex-1`}
+            style={{ transitionDelay: visible ? "0.3s" : "0s" }}
+          >
             <div className="relative">
               <Image
                 src={`${basePath}/digital-twin/proactive-applications.png`}
