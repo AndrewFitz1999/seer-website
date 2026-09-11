@@ -30,6 +30,15 @@ const lineDots = [
   { x: 33.49, y: 62.62, color: "#E0503C", delay: 2.1 },
 ];
 
+function FlowArrow() {
+  return (
+    <svg width="56" height="20" viewBox="0 0 56 20" className="mt-4" aria-hidden="true">
+      <line x1="2" y1="10" x2="42" y2="10" stroke="#C9AFF5" strokeWidth={2} strokeDasharray="6 5" strokeLinecap="round" className="flow-arrow-dash" />
+      <path d="M36,3 L46,10 L36,17" fill="none" stroke="#C9AFF5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export default function DigitalTwin() {
   const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
@@ -83,6 +92,7 @@ export default function DigitalTwin() {
             <div className="mt-2 text-[0.85rem] leading-[1.5] text-grey-dim">
               Continuous data offered from medical devices, wearables and medical reports.
             </div>
+            <FlowArrow />
           </div>
 
           {/* Metabolic Digital Twin: floating, with blinking dots along each data line */}
@@ -107,6 +117,7 @@ export default function DigitalTwin() {
             <div className="mt-2 text-[0.85rem] leading-[1.5] text-grey-dim">
               A dynamic virtual replica of an individual&rsquo;s metabolism.
             </div>
+            <FlowArrow />
           </div>
 
           {/* Graph: a marker rides the solid curve back and forth, with a dropline to the baseline */}
