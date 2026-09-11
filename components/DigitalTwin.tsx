@@ -1,22 +1,34 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 const nodes = [
   {
     key: "input",
     title: "Real-world data",
     body: "Continuous data offered from medical devices, wearables and medical reports.",
+    src: "/digital-twin/real-world-data.png",
+    width: 1086,
+    height: 1448,
   },
   {
     key: "twin",
     title: "Metabolic Digital Twin",
     body: "A dynamic virtual replica of an individual's metabolism.",
+    src: "/digital-twin/metabolic-twin.png",
+    width: 1448,
+    height: 1086,
   },
   {
     key: "insight",
     title: "New Features and proactive applications",
     body: "Personalised, predictive and safe applications can be created.",
+    src: "/digital-twin/proactive-applications.png",
+    width: 1448,
+    height: 1086,
   },
 ];
 
@@ -54,16 +66,21 @@ export default function DigitalTwin() {
           </p>
         </div>
 
-        <div className="mt-[8vh] grid grid-cols-1 gap-10 sm:grid-cols-3">
+        <div className="mt-[8vh] grid grid-cols-1 gap-10 items-start sm:grid-cols-3">
           {nodes.map((n, i) => (
             <div
               key={n.key}
               className={`reveal ${visible ? "reveal-in" : ""}`}
               style={{ transitionDelay: visible ? `${i * 0.15}s` : "0s" }}
             >
-              <div className="flex aspect-[4/3] w-full flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-ink/20 bg-paper-2 px-6 text-center">
-                <span className="text-[0.8rem] text-grey-dim">Image placeholder</span>
-                <span className="font-display text-[0.9rem] font-medium text-grey">{n.title}</span>
+              <div className="overflow-hidden rounded-2xl bg-paper-2">
+                <Image
+                  src={`${basePath}${n.src}`}
+                  alt={n.title}
+                  width={n.width}
+                  height={n.height}
+                  className="h-auto w-full"
+                />
               </div>
               <div className="mt-5 font-display text-[0.95rem] font-medium text-ink">{n.title}</div>
               <div className="mt-2 text-[0.85rem] leading-[1.5] text-grey-dim">{n.body}</div>
