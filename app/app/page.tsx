@@ -15,6 +15,10 @@ const screens = [
   { src: "/mockups/seer-todays-guidance.png", label: "Today's guidance" },
 ];
 
+// Mobile stacks these in a different order than the desktop fan (which
+// features the home screen front and center): home, insights, guidance.
+const mobileScreens = [screens[1], screens[0], screens[2]];
+
 export default function MyAllyPage() {
   return (
     <main>
@@ -26,7 +30,7 @@ export default function MyAllyPage() {
       <section className="overflow-hidden bg-paper px-[8vw] py-[12vh]">
         {/* Mobile: stacked, full-size phones — the fan below gets too narrow to render legibly */}
         <div className="mx-auto flex max-w-[260px] flex-col items-center gap-10 md:hidden">
-          {screens.map((screen) => (
+          {mobileScreens.map((screen) => (
             <PhoneMockup key={screen.src} src={screen.src} label={screen.label} className="w-full" />
           ))}
         </div>
