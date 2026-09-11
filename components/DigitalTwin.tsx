@@ -32,10 +32,20 @@ const lineDots = [
 
 function FlowArrow() {
   return (
-    <div className="flex shrink-0 items-center justify-center py-2 sm:self-center sm:py-0">
-      <svg width="56" height="20" viewBox="0 0 56 20" className="rotate-90 sm:rotate-0" aria-hidden="true">
-        <line x1="2" y1="10" x2="42" y2="10" stroke="#C9AFF5" strokeWidth={2} strokeDasharray="6 5" strokeLinecap="round" className="flow-arrow-dash" />
-        <path d="M36,3 L46,10 L36,17" fill="none" stroke="#C9AFF5" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+    <div className="flex shrink-0 items-center justify-center px-1 py-5 sm:self-center sm:px-6 sm:py-0">
+      <svg width="64" height="26" viewBox="0 0 64 26" className="rotate-90 sm:rotate-0" aria-hidden="true">
+        <line
+          x1="2"
+          y1="13"
+          x2="45"
+          y2="13"
+          stroke="#C9AFF5"
+          strokeWidth={2.5}
+          strokeDasharray="7 6"
+          strokeLinecap="round"
+          className="flow-arrow-dash"
+        />
+        <path d="M41,3.5 L59,13 L41,22.5 Z" fill="#C9AFF5" />
       </svg>
     </div>
   );
