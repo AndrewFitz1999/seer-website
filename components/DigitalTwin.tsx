@@ -115,7 +115,7 @@ export default function DigitalTwin() {
       <div className="mx-auto max-w-[1200px]">
         <div className={`reveal ${visible ? "reveal-in" : ""} max-w-[62ch]`}>
           <h2 className="font-display text-[clamp(1.8rem,3.2vw,2.6rem)] font-medium leading-[1.2] tracking-[-0.01em] text-ink">
-            Understanding our Metabolic Digital Twin +
+            Understanding our MDT+ Platform
           </h2>
           <p className="mt-5 text-[1.05rem] leading-[1.7] text-grey">
             Our <strong className="font-semibold text-ink">MDT+</strong> platform transforms real
