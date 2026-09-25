@@ -80,9 +80,6 @@ export default function Header() {
             </button>
           </div>
 
-          <Link href="/team" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
-            Team
-          </Link>
           <Link href="/help-our-cause" className="font-body text-[0.9rem] text-grey transition-colors hover:text-purple-soft">
             Help Our Cause
           </Link>
@@ -180,13 +177,6 @@ export default function Header() {
 
             <div className="my-2 h-px bg-ink/10" />
 
-            <Link
-              href="/team"
-              onClick={() => setMenuOpen(false)}
-              className="py-2.5 font-body text-[0.95rem] text-grey transition-colors hover:text-purple-soft"
-            >
-              Team
-            </Link>
             <Link
               href="/help-our-cause"
               onClick={() => setMenuOpen(false)}
